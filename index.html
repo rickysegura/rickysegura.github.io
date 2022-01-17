@@ -38,6 +38,15 @@
       background-color:crimson;
       color:#efefef;
     }
+
+    #page-footer
+    {
+      margin-top:15px;
+      padding:16px;
+      background-color:crimson;
+      color:#efefef;
+      text-align:center;
+    }
   </style>
 </head>
 <body>
@@ -47,7 +56,7 @@
     </header>
     
     <form>
-      <input type="url" name="website" id="website" placeholder="example.com" required>
+      <input type="text" name="website" id="website" placeholder="example.com" required>
       <br>
       <button type="button" onclick="generateQRCode()" style="margin-top:15px;">Generate QR Code</button>
     </form>
@@ -58,6 +67,10 @@
       </center>
     </div>
   </div>
+
+  <footer id="page-footer">
+    <h2>Copyright &copy;2022 Ricky Segura</h2>
+  </footer>
 
   <script type="text/javascript">
     //Create QRCode
