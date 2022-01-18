@@ -7,8 +7,21 @@
   <title>Ricky Segura</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Imports -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!--Imports-->
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- QRCode.js -->
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
@@ -23,55 +36,96 @@
       padding:0;
     }
 
-    form
+    .icon
     {
-      padding:16px;
-      margin:auto;
-      max-width:300px;
-      text-align:center;
+      font-size:35px;
     }
 
-    #qrHeader
+    #page-header
     {
-      padding:16px;
-      text-align:center;
       background-color:crimson;
       color:#efefef;
     }
 
     #page-footer
     {
-      margin-top:15px;
       padding:16px;
-      background-color:crimson;
-      color:#efefef;
-      text-align:center;
     }
   </style>
 </head>
 <body>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">Home</a></li>
+
+      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">About</a></li>
+    </ul>
+  </nav>
+
+  <!--Page Header-->
+  <header id="page-header" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>Ricky Segura</h1>
+      <p>Software Research &amp; Development</p>
+    </div>
+  </header>
+
+  <!--Main Body-->
+  <main class="container-fluid">
+    <!--Article Section-->
+    <section class="container">
+      <!--Top Feed-->
+      <hr>
+      <article class="container" id="article-1">
+        <header>
+          <img src="https://pbs.twimg.com/profile_images/1480321455581663234/htFLeu-p_400x400.jpg" alt="Founder" title="Founder" class="rounded-circle" style="max-width:300px;">
+        </header>
+
+        <div class="article-body">
+          <p>What's up, I create all different kinds of software: front &amp; backend web development, 2D game development with Pygame, Twitter API utilization with Tweepy, keyboard recorders...yeah, I can do a bit.</p>
+        </div>
+
+        <footer>
+          <p class="text-monospace">Date: 01/18/2022</p>
+        </footer>
+      </article>
+      <hr>
+    </section>
+  </main>
+
+  <!--QR Code Generator-->
   <div class="form">
-    <header id="qrHeader">
-      <h1>Generate QR Code</h1>
+    <header class="jumbotron jumbotron-fluid" style="background-color:crimson;">
+      <div class="container">
+        <h1 class="text-white">Generate QR Code</h1>
+      </div>
     </header>
     
-    <form>
-      <input type="text" name="website" id="website" placeholder="example.com" required>
+    <form class="container-fluid">
+      <input class="form-control" type="text" name="website" id="website" placeholder="example.com" required>
       <br>
-      <button type="button" onclick="generateQRCode()" style="margin-top:15px;">Generate QR Code</button>
+      <button type="button" onclick="generateQRCode()" style="margin-top:15px;" class="form-control">Generate QR Code</button>
     </form>
 
     <div id="qrcode-container">
-      <center>
+      <center style="margin-top:15px;">
         <div id="qrcode" class="qrcode"></div>
       </center>
     </div>
   </div>
 
-  <footer id="page-footer">
-    <h2>Copyright &copy;2022 Ricky Segura</h2>
+  <!--Page Footer-->
+  <footer id="page-footer" class="container-fluid text-center text-monospace">
+    <div>
+      <a href="instagram.com/ricoxsegura" target="_blank"><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
+      <a href="twitter.com/ricoxsegura" target="_blank"><i class="fa fa-twitter-square icon" aria-hidden="true"></i></a>
+      <a href="github.com/rickysegura" target="_blank"><i class="fa fa-git-square icon" aria-hidden="true"></i></a>
+    </div>
+    <h3>Copyright &copy;2022 Ricky Segura</h3>
   </footer>
 
+  <!--Script for QR Code Generation-->
   <script type="text/javascript">
     //Create QRCode
     function generateQRCode()
