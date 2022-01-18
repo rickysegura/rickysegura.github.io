@@ -55,12 +55,34 @@
 </head>
 <body>
   <!--Navbar-->
-  <nav class="navbar navbar-expand-sm bg-dark">
-    <ul class="navbar-nav">
-      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">Home</a></li>
+  <!--Home, About, Services-->
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!--Brand-->
+    <a href="javascript:void(0)" class="navbar-brand">R&amp;D</a>
 
-      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">About</a></li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--Navbar Links-->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+
+        <li class="nav-item"><a href="" class="nav-link">About</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Web Development</a>
+            <a class="dropdown-item" href="#">2D Game Development</a>
+            <a class="dropdown-item" href="#">Spyware</a>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!--Page Header-->
