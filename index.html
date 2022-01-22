@@ -1,206 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ricky Segura</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <head>
+        <link rel="shortcut icon" href="https://images.pexels.com/photos/326514/pexels-photo-326514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" type="image/x-icon">
+        <title>Omni Digital Solutions</title>
 
-  <!--Imports-->
-  <!--Font Awesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="2119_gymso_fitness/css/bootstrap.min.css">
+        <link rel="stylesheet" href="2119_gymso_fitness/css/font-awesome.min.css">
+        <link rel="stylesheet" href="2119_gymso_fitness/aos.css">
 
-  <!-- jQuery library -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="2119_gymso_fitness/css/tooplate-gymso-style.css">
+    <!--
+    Tooplate 2119 Gymso Fitness
+    https://www.tooplate.com/view/2119-gymso-fitness
+    -->
+    </head>
+    <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+        <!-- MENU BAR -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Omni Digital Solutions</a>
 
-  <!-- Popper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link smoothScroll">Home</a>
+                        </li>
 
-  <!-- QRCode.js -->
-  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link smoothScroll">About</a>
+                        </li>
 
-  <style>
-    body, html
-    {
-      height:100%;
-      font-style:"Verdana", sans-serif;
-      font-size:18px;
-      margin:0;
-      padding:0;
-    }
+                        <li class="nav-item dropdown">
+                            <a href="#services" class="nav-link smoothScroll">Services</a>
+                        </li>
 
-    .icon
-    {
-      font-size:35px;
-    }
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link smoothScroll">Contact</a>
+                        </li>
+                    </ul>
 
-    #page-header
-    {
-      background-image:url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-      /*background-image:url("https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");*/
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      color:#efefef;
-    }
+                    <ul class="social-icon ml-lg-3">
+                        <li><a href="http://twitter.com/ricoxsegura" class="fa fa-twitter"></a></li>
+                        <li><a href="http://instagram.com/ricoxsegura" class="fa fa-instagram"></a></li>
+                    </ul>
+                </div>
 
-    #page-footer
-    {
-      padding:16px;
-    }
-  </style>
-</head>
-<body>
-  <!--Navbar-->
-  <!--Home, About, Services-->
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!--Brand-->
-    <a href="javascript:void(0)" class="navbar-brand">R.S.</a>
+            </div>
+        </nav>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- HERO -->
+        <section class="hero d-flex flex-column justify-content-center align-items-center" id="home">
+            <div class="bg-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto col-12">
+                        <div class="hero-text mt-5 text-center">
+                            <h6 data-aos="fade-up" data-aos-delay="300">software specific to you.</h6>
 
-    <!--Navbar Links-->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Software</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#freeSoftware">View Free Software Catalog</a>
-            <a class="dropdown-item" onclick="alert('Unfortunately, this option is unavailable')">View Paid Software Catalog</a>
-          </div>
-        </li>
+                            <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">Upgrade your online presence with Omni Digital Solutions</h1>
 
-        <li class="nav-item"><a class="nav-link" href="#qrGenerator">QR Code Generator</a></li>
+                            <a href="#feature" class="btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="600">Get started</a>
 
-        <li class="nav-item"><a href="mailto:ricosegura@icloud.com" class="nav-link">Email Me</a></li>
-      </ul>
-    </div>
-  </nav>
+                            <a href="#about" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="700">learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!--Page Header-->
-  <header id="page-header" class="jumbotron jumbotron-fluid">
-    <div class="container text-center">
-      <h1>Ricky Segura</h1>
-      <p>Software Developer - Colorado, USA</p>
-    </div>
-  </header>
+        <section class="feature" id="feature">
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex flex-column justify-content-center ml-lg-auto mr-lg-5 col-lg-5 col-md-6 col-12">
+                        <h2 class="mb-3 text-white" data-aos="fade-up">New to Omni?</h2>
 
-  <!-- MAIN BODY -->
-  <main>
-    <div class="container" style="margin-top:15px;">
-      <header class="jumbotron jumbotron-fluid bg-dark">
-        <div class="container">
-          <h2 class="text-white" id="portfolio">Portfolio</h2>
+                        <h6 class="mb-4 text-white" data-aos="fade-up">Book a free consultation</h6>
+
+                        <p data-aos="fade-up" data-aos-delay="200">Omni Digital Solutions is dedicated to helping business owners find peace of mind when it comes to their online footprint.</p>
+
+                        <p>Get started on having something online that you can be proud of.</p>
+
+                        <a href="mailto:ricosegura@icloud.com" class="btn custom-btn bg-color mt-3">Book Consultation</a>
+                    </div>
+
+                    <div class="mr-lg-auto mt-3 col-lg-4 col-md-6 col-12">
+                        <div class="about-working-hours">
+                            <div>
+
+                                    <h2 class="mb-4 text-white" data-aos="fade-up" data-aos-delay="500">Working hours</h2>
+
+                                <strong class="d-block" data-aos="fade-up" data-aos-delay="600">Sunday : Closed</strong>
+
+                                <strong class="mt-3 d-block" data-aos="fade-up" data-aos-delay="700">Monday - Friday</strong>
+
+                                    <p data-aos="fade-up" data-aos-delay="800">4:30 PM - 9:00 PM</p>
+
+                                    <strong class="mt-3 d-block" data-aos="fade-up" data-aos-delay="700">Saturday</strong>
+
+                                    <p data-aos="fade-up" data-aos-delay="800">9:00 AM - 3:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about section" id="about">
+                <div class="container">
+                        <div class="row">
+                                <div class="mt-lg-5 mb-lg-0 mb-4 col-lg-5 col-md-10 mx-auto col-12">
+                                    <h2 class="mb-4" data-aos="fade-up" data-aos-delay="300">Hello, welcome to Omni</h2>
+
+                                    <p data-aos="fade-up" data-aos-delay="400">Whether you are looking for a static landing page, e-commerce website, or redesign to an existing site, Omni is capable of providing expertise and experience.</p>
+
+                                    <!--
+                                    <p data-aos="fade-up" data-aos-delay="500">If you have any question regarding <a rel="nofollow" href="https://www.tooplate.com/view/2119-gymso-fitness" target="_parent">Gymso Fitness HTML template</a>, you can <a rel="nofollow" href="https://www.tooplate.com/contact" target="_parent">contact Tooplate</a> immediately. Thank you.</p>
+                                    -->
+                                </div>
+
+                                <div class="ml-lg-auto col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="700">
+                                    <div class="team-thumb">
+                                        <img src="https://pbs.twimg.com/media/D1Zc83zVsAAeURG?format=jpg&name=900x900" class="img-fluid" alt="Trainer">
+
+                                        <div class="team-info d-flex flex-column">
+
+                                            <h3>Ricky Segura</h3>
+                                            <span>Software Developer</span>
+
+                                            <ul class="social-icon mt-3">
+                                                <li><a href="http://twitter.com/ricoxsegura" class="fa fa-twitter" target="_blank"></a></li>
+                                                <li><a href="http://instagram.com/ricoxsegura" class="fa fa-instagram" target="_blank"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--
+                                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="800">
+                                    <div class="team-thumb">
+                                        <img src="2119_gymso_fitness/images/team/team-image01.jpg" class="img-fluid" alt="Trainer">
+
+                                        <div class="team-info d-flex flex-column">
+
+                                            <h3>Catherina</h3>
+                                            <span>Body trainer</span>
+
+                                            <ul class="social-icon mt-3">
+                                                <li><a href="#" class="fa fa-instagram"></a></li>
+                                                <li><a href="#" class="fa fa-facebook"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            -->
+                        </div>
+                </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="class section" id="class">
+                <div class="container">
+                        <div class="row">
+
+                                <div class="col-lg-12 col-12 text-center mb-5">
+                                    <h6 data-aos="fade-up">Get A Perfect Solution</h6>
+
+                                    <h2 data-aos="fade-up" data-aos-delay="200" id="services">Our Services</h2>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="class-thumb">
+                                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid" alt="Class">
+
+                                        <div class="class-info">
+                                            <h3 class="mb-1">Landing Page Design</h3>
+
+                                            <span><strong>Developer</strong> - Ricky</span>
+
+                                            <span class="class-price">$200</span>
+
+                                            <p class="mt-3">Need a landing page for your business or group? Get one that will retain customers and professionally represent you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 mt-lg-0 mt-md-0 col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="class-thumb">
+                                        <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid" alt="Class">
+
+                                        <div class="class-info">
+                                            <h3 class="mb-1">Website Redesign</h3>
+
+                                            <span><strong>Developer</strong> - Ricky</span>
+
+                                            <span class="class-price">$200</span>
+
+                                            <p class="mt-3">Already have a website that needs to be updated or modernized?</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 mt-lg-0 col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
+                                    <div class="class-thumb">
+                                        <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid" alt="Class">
+
+                                        <div class="class-info">
+                                            <h3 class="mb-1">Social Media Marketing</h3>
+
+                                            <span><strong>Designer</strong> - Ricky</span>
+
+                                            <span class="class-price">$75</span>
+
+                                            <p class="mt-3">In 2022, your business must have a social media presence in order to properly thrive in today's digital climate. Get your social accounts designed and properly advertised</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                </div>
+        </section>
+
+        <!-- SCHEDULE -->
+        <!--
+        <section class="schedule section" id="schedule">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-lg-12 col-12 text-center">
+                                    <h6 data-aos="fade-up">our weekly GYM schedules</h6>
+
+                                    <h2 class="text-white" data-aos="fade-up" data-aos-delay="200">Workout Timetable</h2>
+                                </div>
+
+                                <div class="col-lg-12 py-5 col-md-12 col-12">
+                                    <table class="table table-bordered table-responsive schedule-table" data-aos="fade-up" data-aos-delay="300">
+
+                                        <thead class="thead-light">
+                                            <th><i class="fa fa-calendar"></i></th>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td><small>7:00 am</small></td>
+                                                <td>
+                                                    <strong>Cardio</strong>
+                                                    <span>7:00 am - 9:00 am</span>
+                                                </td>
+                                                <td>
+                                                    <strong>Power Fitness</strong>
+                                                    <span>7:00 am - 9:00 am</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>Yoga Section</strong>
+                                                    <span>7:00 am - 9:00 am</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><small>9:00 am</small></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>Boxing</strong>
+                                                    <span>8:00 am - 9:00 am</span>
+                                                </td>
+                                                <td>
+                                                    <strong>Areobic</strong>
+                                                    <span>8:00 am - 9:00 am</span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>Cardio</strong>
+                                                    <span>8:00 am - 9:00 am</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><small>11:00 am</small></td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>Boxing</strong>
+                                                    <span>11:00 am - 2:00 pm</span>
+                                                </td>
+                                                <td>
+                                                    <strong>Areobic</strong>
+                                                    <span>11:30 am - 3:30 pm</span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>Body work</strong>
+                                                    <span>11:50 am - 5:20 pm</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><small>2:00 pm</small></td>
+                                                <td>
+                                                    <strong>Boxing</strong>
+                                                    <span>2:00 pm - 4:00 pm</span>
+                                                </td>
+                                                <td>
+                                                    <strong>Power lifting</strong>
+                                                    <span>3:00 pm - 6:00 pm</span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>Cardio</strong>
+                                                    <span>6:00 pm - 9:00 pm</span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <strong>Crossfit</strong>
+                                                    <span>5:00 pm - 7:00 pm</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
+                </div>
+        </section>
+    -->
+
+        <!-- CONTACT -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="row">
+                        <!--
+                        <div class="ml-auto col-lg-5 col-md-6 col-12">
+                            <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Feel free to ask anything</h2>
+
+                            <form action="#" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
+                                <input type="text" class="form-control" name="cf-name" placeholder="Name">
+
+                                <input type="email" class="form-control" name="cf-email" placeholder="Email">
+
+                                <textarea class="form-control" rows="5" name="cf-message" placeholder="Message"></textarea>
+
+                                <button type="submit" class="form-control" id="submit-button" name="submit">Send Message</button>
+                            </form>
+                        </div>
+                    -->
+
+                        <div class="mx-auto mt-4 mt-lg-0 mt-md-0 col-lg-5 col-md-6 col-12">
+                            <h2 class="mb-4" data-aos="fade-up" data-aos-delay="600">Where you can <span>find us</span></h2>
+
+                            <p data-aos="fade-up" data-aos-delay="800"><i class="fa fa-map-marker mr-1"></i> Colorado Springs, Colorado, USA</p>
+    <!-- How to change your own map point
+        1. Go to Google Maps
+        2. Click on your location point
+        3. Click "Share" and choose "Embed map" tab
+        4. Copy only URL and paste it within the src="" field below
+    -->
+                            <!--
+                            <div class="google-map" data-aos="fade-up" data-aos-delay="900">
+                            <iframe src="https://maps.google.com/maps?q=Av.+Lúcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="1920" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                            </div>
+                            -->
+                        </div>
+                        
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                        <div class="ml-auto col-lg-4 col-md-5">
+                            <p class="copyright-text">Copyright &copy; 2021 Omni Digital Solutions</p>
+                        </div>
+
+                        <div class="d-flex justify-content-center mx-auto col-lg-5 col-md-7 col-12">
+                            <p class="mr-4">
+                                <i class="fa fa-envelope-o mr-1"></i>
+                                <a href="mailto:ricosegura@icloud.com">ricosegura@icloud.com</a>
+                            </p>
+
+                            <p><i class="fa fa-phone mr-1"></i> 818-299-3298</p>
+                        </div>
+                        
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal -->
+        <div class="modal fade" id="membershipForm" tabindex="-1" role="dialog" aria-labelledby="membershipFormLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+            <div class="modal-header">
+
+                <h2 class="modal-title" id="membershipFormLabel">Membership Form</h2>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form class="membership-form webform" role="form">
+                    <input type="text" class="form-control" name="cf-name" placeholder="John Doe">
+
+                    <input type="email" class="form-control" name="cf-email" placeholder="Johndoe@gmail.com">
+
+                    <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+                    <textarea class="form-control" rows="3" name="cf-message" placeholder="Additional Message"></textarea>
+
+                    <button type="submit" class="form-control" id="submit-button" name="submit">Submit Button</button>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="signup-agree">
+                        <label class="custom-control-label text-small text-muted" for="signup-agree">I agree to the <a href="#">Terms &amp;Conditions</a>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer"></div>
+
+            </div>
         </div>
-      </header>
-
-      <section>
-        <div>
-          <p>Currently uploading projects. To see older projects, feel free to visit my <a href="http://github.com/rickysegura" target="_blank">GitHub</a></p>
         </div>
-      </section>
-    </div>
 
-    <div class="container" style="margin-top:15px;">
-      <header class="jumbotron jumbotron-fluid bg-dark">
-        <div class="container">
-          <h2 class="text-white" id="freeSoftware">Free Software</h2>
-        </div>
-      </header>
-
-      <section>
-        <div>
-          <p>At this time software is being optomized for potential use by independent parties.</p>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!--QR Code Generator-->
-  <div class="form container" style="margin-top:15px;">
-    <header class="jumbotron jumbotron-fluid bg-dark">
-      <div class="container">
-        <h2 class="text-white" id="qrGenerator">Generate QR Code</h2>
-      </div>
-    </header>
-    
-    <form>
-      <label for="website">Enter Text or URL</label>
-      <input class="form-control" type="text" name="website" id="website" placeholder="example.com" required>
-      
-      <button type="button" onclick="generateQRCode()" style="margin-top:15px;" class="form-control">Generate QR Code</button>
-    </form>
-
-    <div id="qrcode-container">
-      <center style="margin-top:15px;">
-        <div id="qrcode" class="qrcode"></div>
-      </center>
-    </div>
-  </div>
-
-  <!-- MISC. -->
-  <!--
-  <div class="container text-center" style="margin-top:15px;">
-    <hr>
-    <h3>Socials</h3>
-    <a class="twitter-timeline" data-width="300" data-height="400" data-theme="dark" href="https://twitter.com/ricoxsegura?ref_src=twsrc%5Etfw">Tweets by ricoxsegura</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  -->
-
-  <!--Page Footer-->
-  <footer id="page-footer" class="container-fluid text-center text-monospace">
-    <div>
-      <a href="http://instagram.com/ricoxsegura" target="_blank"><i class="fa fa-instagram icon" aria-hidden="true"></i></a>
-      <a href="http://twitter.com/ricoxsegura" target="_blank"><i class="fa fa-twitter-square icon" aria-hidden="true"></i></a>
-      <a href="http://github.com/rickysegura" target="_blank"><i class="fa fa-git-square icon" aria-hidden="true"></i></a>
-    </div>
-    <hr>
-    <h3>Copyright &copy;2022 Ricky Segura</h3>
-  </footer>
-
-  <!--Script for QR Code Generation-->
-  <script type="text/javascript">
-    //Create QRCode
-    function generateQRCode()
-    {
-      let url = document.getElementById("website").value
-      if(url)
-      {
-        let qrcodeContainer = document.getElementById("qrcode")
-        qrcodeContainer.innerHTML = ""
-        new QRCode(qrcodeContainer, {
-          text:url,
-          colorDark: "crimson",
-          colorLight: "#ffffff",
-          correctLevel:QRCode.CorrectLevel.H
-        })
-
-        /*With some styles
-        let qrcodeContainer2 = document.getElementById("qrcode-2");
-        qrcodeContainer2.innerHTML = "";
-        new QRCode(qrcodeContainer2, {
-          text: website,
-          width: 128,
-          height: 128,
-          colorDark: "#5868bf",
-          colorLight: "#ffffff",
-          correctLevel: QRCode.CorrectLevel.H
-        });
-        */
-
-        document.getElementById("qrcode-container").style.display = "block"
-      } else { alert("Please enter a valid URL") }
-    }
-  </script>
-</body>
+        <!-- SCRIPTS -->
+        <script src="2119_gymso_fitness/js/jquery.min.js"></script>
+        <script src="2119_gymso_fitness/js/bootstrap.min.js"></script>
+        <script src="2119_gymso_fitness/js/aos.js"></script>
+        <script src="2119_gymso_fitness/js/smoothscroll.js"></script>
+        <script src="2119_gymso_fitness/js/custom.js"></script>
+    </body>
 </html>
