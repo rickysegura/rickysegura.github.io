@@ -24,20 +24,21 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
-  <header class="container">
-    <h1>NASA's Photo of the Day</h1>
+<body class="bg-dark">
+  <header class="container ">
+    <h1 class="text-white">NASA's Photo of the Day</h1>
 
-    <div class="form-group">
+    <div class="form-group container" style="padding-bottom:15px;">
       <input type="date" id="date" class="calendar">
       <button id="btn" class="btn btn-primary">Get Image</button>
     </div>
   </header>
 
-  <div id="target" class="container">
+  <div id="target" class="container text-white">
     <h3 id="photoTitle"></h3>
     <img id="photo" height="300px" width="300px" style="margin-top:15px;">
     <p id="photoDescription"></p>
+    <p id="photoCopyright"></p>
   </div>
 
   <script>
@@ -53,17 +54,20 @@
       req.onload = () => {
         const data = JSON.parse(req.responseText)
         renderHTML(data)
+        console.log(data)
+        console.log(searchDate)
       }
       req.send()
     })
 
     const renderHTML = (data) => {
-      let htmlString = "<p>Copyright &copy;" + data.copyright + "</p>"
+      //let htmlString = "<p>Copyright &copy;" + data.copyright + "</p>"
 
+      document.getElementById("photo").src = data.url
       document.getElementById("photoTitle").innerText = data.title
       document.getElementById("photoDescription").innerText = data.explanation
-      document.getElementById("photo").src = data.url
-      document.getElementById("target").insertAdjacentHTML("beforeend", htmlString)
+      document.getElementById("photoCopyright").innerText = "Copyright " + data.copyright
+      //document.getElementById("target").insertAdjacentHTML("beforeend", htmlString)
     }
   </script>
 </body>
