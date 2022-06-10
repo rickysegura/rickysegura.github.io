@@ -27,7 +27,11 @@
 <body>
   <header class="container">
     <h1>NASA's Photo of the Day</h1>
-    <button id="btn" class="btn btn-primary">Get Image</button>
+
+    <div class="form-group">
+      <input type="date" id="date" class="calendar">
+      <button id="btn" class="btn btn-primary">Get Image</button>
+    </div>
   </header>
 
   <div id="target" class="container">
@@ -42,12 +46,13 @@
 
     // button functionality with API request
     document.getElementById("btn").addEventListener("click", () => {
+      let searchDate = document.getElementById("date").value
+
       const req = new XMLHttpRequest()
-      req.open('GET', 'https://api.nasa.gov/planetary/apod?api_key=lo79vEBzZlz6rej2JXaBUoDyGvlOwHFrdP4h4GAr')
+      req.open('GET', 'https://api.nasa.gov/planetary/apod?date=' + searchDate + '&api_key=lo79vEBzZlz6rej2JXaBUoDyGvlOwHFrdP4h4GAr')
       req.onload = () => {
         const data = JSON.parse(req.responseText)
         renderHTML(data)
-        console.log(data)
       }
       req.send()
     })
