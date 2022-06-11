@@ -26,7 +26,7 @@
 </head>
 <body class="bg-dark">
   <header class="container ">
-    <h1 class="text-white">NASA's Photo of the Day</h1>
+    <h1 class="text-white display-4">NASA's Photo of the Day</h1>
 
     <div class="form-group container" style="padding-bottom:15px;">
       <input type="date" id="date" class="calendar">
@@ -41,11 +41,24 @@
     <p id="photoCopyright"></p>
   </div>
 
-  <script>
-    /* My API key is included for functionality, but you should get your own to use.
-     https://api.nasa.gov/planetary/apod?api_key=lo79vEBzZlz6rej2JXaBUoDyGvlOwHFrdP4h4GAr */
+  <footer class="container-fluid text-white text-center">
+    <code>Developed by <a href="https://rickysegura.github.io/">Ricky Segura</a></code>
+    <h3>Copyright &copy;2022</h3>
+  </footer>
 
-    // button functionality with API request
+  <script>
+    /* My API key is included for functionality
+     api_key=lo79vEBzZlz6rej2JXaBUoDyGvlOwHFrdP4h4GAr */
+
+    //Function to render API response
+    const renderHTML = (data) => {
+      document.getElementById("photo").src = data.url
+      document.getElementById("photoTitle").innerText = data.title
+      document.getElementById("photoDescription").innerText = data.explanation
+      document.getElementById("photoCopyright").innerText = "Image copyright: " + data.copyright
+    }
+
+    //Button functionality with API request
     document.getElementById("btn").addEventListener("click", () => {
       let searchDate = document.getElementById("date").value
 
@@ -59,16 +72,6 @@
       }
       req.send()
     })
-
-    const renderHTML = (data) => {
-      //let htmlString = "<p>Copyright &copy;" + data.copyright + "</p>"
-
-      document.getElementById("photo").src = data.url
-      document.getElementById("photoTitle").innerText = data.title
-      document.getElementById("photoDescription").innerText = data.explanation
-      document.getElementById("photoCopyright").innerText = "Copyright " + data.copyright
-      //document.getElementById("target").insertAdjacentHTML("beforeend", htmlString)
-    }
   </script>
 </body>
 </html>
