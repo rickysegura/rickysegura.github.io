@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px;}
+::-webkit-scrollbar-thumb{background:#333;border-radius:10px;}
+::-webkit-scrollbar-thumb:hover{background:#555;}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background: rgba(0, 0, 0, 1);
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background: rgba(0, 0, 0, .5);
+  color: white;
+}
+
+/* Style the active link (or home/logo) */
+/*.active {}*/
+
+#myLinks { background: rgba(255, 255, 255, .25); }
+
+/*main { margin-top: 5vh; }*/
+
+#tree-container {
+  background-image: url("https://images.pexels.com/photos/1122409/pexels-photo-1122409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-bottom: 5vh;
+  padding-top: 5vh;
+}
+
+#link-tree {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vh;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+#link-tree a {
+  width: 75vw;
+  text-align: center;
+  padding: 2.5vh 5vw 2.5vh 5vw;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#bio h1, h2 {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.neonText {
+  color: #fff;
+  text-shadow:
+    /* White glow */
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff;
+}
+
+#bio-img {
+  background-image: url("one.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35vw;
+  height: 35vw;
+  border-radius: 2.5%;
+}
+
+#user-vid { background-color: #333; }
+
+#twitter-feed { background-color: #222; }
+
+.video-container {
+  height: 35vh;
+  width: 100%;
+  position: relative;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}

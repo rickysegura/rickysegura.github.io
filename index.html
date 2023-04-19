@@ -1,84 +1,71 @@
-<!--
-	Designed & developed by Ricky Segura
-	Based out of Los Angeles, California
-
-	devrickysegura@gmail.com
--->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-	<link rel="shortcut icon" href="image1.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ricky Segura - Web Designer & Developer</title>
-	<script src="https://kit.fontawesome.com/5885002872.js" crossorigin="anonymous"></script>
-    
-    <script type="module" crossorigin src="/assets/index-53991c35.js"></script>
-    <link rel="stylesheet" href="/assets/index-8251bae5.css">
+    <title>Ricky Segura</title>
+
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/5885002872.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
   </head>
-  <body onload="loadingScreen()">
-	<div id="loading-screen"><h1>Loading...</h1></div>
+  <body>
+    <div id="app">
+      <!-- Top Navigation Menu -->
+      <div class="topnav">
+        <a href="#home" class="active"><i class="fa-solid fa-location-dot"></i> Los Angeles, CA</a>
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+          <a href="https://myneospaces.com/">NeoSpaces 💻</a>
+          <a href="https://apod.w3spaces.com/">APOD 🔭</a>
+          <a href="https://www.buymeacoffee.com/papibones">Buy Me A Coffee ☕</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
 
-    <div id="hologram"></div>
+      <main>
+        <div class="video-container">
+          <video src="yuh.mp4" controls></video>
+        </div>
 
-    <div id="diagnostics">
-	  <main class="tree-container">
-			<div id="avi-container" style="text-align:center;">
-				<div id="bio-avi"></div>
-				<h4 id="location"><i class="fa-solid fa-location-dot"></i> Los Angeles, CA</h4>
-				<h4 id="bio-name">@rickysegura</h4>
+        <div id="tree-container">
+          <div id="bio">
+            <div id="bio-img"></div>
+            <h1>@rickysegura</h1>
+          </div>
 
-				<div id="bio-links">
-					<a href="mailto:devrickysegura@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-				</div>
-			</div>
-
-			<div class="link-tree">
-				<a href="https://myneospaces.com/" class="link-item">NeoSpaces</a>
-				<a href="https://apod.w3spaces.com/" class="link-item">APOD</a>
-				<a href="https://twitter.com/myneospaces" class="link-item"><i class="fa-brands fa-twitter"></i> Twitter</a>
-				<a href="https://www.twitch.tv/icylilnarco" class="link-item"><i class="fa-brands fa-twitch"></i> Twitch</a>
-			</div>
-	  </main>
-
-	  <footer><h3>Copyright &copy;2023 Ricky Segura. Powered by <a href="https://myneospace.w3spaces.com/">NeoSpaces</a></h3></footer>
+          <section id="link-tree">
+            <a href="https://github.com/rickysegura"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.twitch.tv/icylilnarco"><i class="fa-brands fa-twitch"></i> Twitch</a>
+            <a href="https://www.instagram.com/tsaheyluxbones/"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://twitter.com/theicybones"><i class="fa-brands fa-twitter"></i> Twitter</a>
+            <a href="mailto:devrickysegura@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          </section>
+        </div>
+      </main>
     </div>
 
-	<script> const loadingScreen = () => { document.getElementById("loading-screen").style.display = "none"; }; </script>
+    <section id="user-vid">
+      <iframe width="100%" height="333" src="https://www.youtube.com/embed/SyB6A2qCJSM" title="Another day, more warzone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
 
-    <script type="x-shader/x-vertex" id="vertexshader">
-			attribute float size;
-			attribute vec3 customColor;
-
-			varying vec3 vColor;
-
-			void main() {
-				vColor = customColor;
-
-				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-
-				gl_PointSize = size * ( 300.0 / -mvPosition.z );
-
-				gl_Position = projectionMatrix * mvPosition;
-			}
-	</script>
-
-    <script type="x-shader/x-fragment" id="fragmentshader">
-			uniform vec3 color;
-			uniform sampler2D pointTexture;
-			uniform float alphaTest;
-
-			varying vec3 vColor;
-
-			void main() {
-				gl_FragColor = vec4( color * vColor, 1.0 );
-				gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
-
-				if ( gl_FragColor.a < alphaTest ) discard;
-			}
-	</script>
-
-    
+    <article id="twitter-feed">
+      <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/myneospaces?ref_src=twsrc%5Etfw">Tweets by myneospaces</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </article>
   </body>
 </html>
