@@ -57,6 +57,7 @@ body {
   background-image: url("https://images.pexels.com/photos/1122409/pexels-photo-1122409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   padding-bottom: 15px;
 }
@@ -82,7 +83,6 @@ body {
 }
 
 #bio {
-  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,6 +110,7 @@ body {
   width: 35vw;
   height: 35vw;
   border-radius: 2.5%;
+  margin-top: 15px;
 }
 
 #user-vid { background-color: #333; }
