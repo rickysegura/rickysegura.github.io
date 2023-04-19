@@ -58,8 +58,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 5vh;
-  padding-top: 5vh;
+  padding-bottom: 15px;
 }
 
 #link-tree {
@@ -83,6 +82,7 @@ body {
 }
 
 #bio {
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
