@@ -51,8 +51,6 @@ body {
 
 #myLinks { background: rgba(255, 255, 255, .25); }
 
-/*main { margin-top: 5vh; }*/
-
 #tree-container {
   background-image: url("https://images.pexels.com/photos/1122409/pexels-photo-1122409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-position: center center;
@@ -117,14 +115,14 @@ body {
 #twitter-feed { background-color: #222; }
 
 .video-container {
-  height: 35vh;
+  height: 300px;
   width: 100%;
   position: relative;
 }
 
 .video-container video {
   width: 100%;
-  height: 100%;
+  height: 300px;
   position: absolute;
   object-fit: cover;
   z-index: 0;
