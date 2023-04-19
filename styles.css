@@ -64,9 +64,9 @@ body {
 #link-tree {
   display: flex;
   flex-direction: column;
-  row-gap: 5vh;
+  row-gap: 25px;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 15px;
 }
 
 #link-tree a {
