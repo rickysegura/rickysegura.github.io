@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Share+Tech+Mono&family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Rubik+Wet+Paint&family=Share+Tech+Mono&display=swap');
 
 ::-webkit-scrollbar{width:10px;}
 ::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px;}
@@ -19,9 +19,7 @@ body {
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
-}
+.topnav #myLinks { display: none; }
 
 /* Style navigation menu links */
 .topnav a {
@@ -42,14 +40,14 @@ body {
 
 /* Add a grey background color on mouse-over */
 .topnav a:hover {
-  background: rgba(0, 0, 0, .5);
+  background-color: #333;
   color: white;
 }
 
 /* Style the active link (or home/logo) */
-.active { font-family: 'Tilt Prism', cursive; }
+.active { font-family: 'Goldman', cursive; }
 
-#myLinks { background: rgba(255, 255, 255, .25); }
+/*#myLinks { background: #333; }*/
 
 #tree-container {
   background-image: url("https://images.pexels.com/photos/3434562/pexels-photo-3434562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
@@ -100,16 +98,7 @@ body {
 #bio h1, h2 {
   color: white;
   letter-spacing: 2px;
-  font-family: 'Rubik Wet Paint', cursive;
-}
-
-.neonText {
-  color: #fff;
-  text-shadow:
-    /* White glow */
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff;
+  font-family: 'Goldman', cursive;
 }
 
 #bio-img {
