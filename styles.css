@@ -102,7 +102,7 @@ body {
 }
 
 #bio h1, h2 {
-  color: crimson;
+  color: white;
   /*font-family: 'Libre Barcode 39 Text', cursive;*/
   font-family: 'Nosifer', cursive;
 }
@@ -134,17 +134,4 @@ body {
   position: absolute;
   object-fit: cover;
   z-index: 0;
-}
-
-.neonText {
-  color: #fff;
-  text-shadow:
-    0 0 1px white,
-    0 0 2px white,
-    0 0 5px white,
-    0 0 15px crimson,
-    0 0 25px crimson,
-    0 0 35px crimson,
-    0 0 50px crimson,
-    0 0 100px crimson;
 }
