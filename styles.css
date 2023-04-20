@@ -52,7 +52,7 @@ body {
 #myLinks { background: rgba(255, 255, 255, .25); }
 
 #tree-container {
-  background-image: url("https://images.pexels.com/photos/1122409/pexels-photo-1122409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-image: url("https://images.pexels.com/photos/3434562/pexels-photo-3434562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -85,10 +85,7 @@ body {
   align-items: center;
 }
 
-#bio h1, h2 {
-  color: white;
-  text-shadow: 1px 1px 2px black;
-}
+#bio h1, h2 { color: white; }
 
 .neonText {
   color: #fff;
@@ -127,5 +124,4 @@ body {
   position: absolute;
   object-fit: cover;
   z-index: 0;
-  border-bottom: 2px solid white;
 }
