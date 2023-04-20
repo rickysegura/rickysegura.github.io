@@ -55,6 +55,7 @@ body {
   background-image: url("https://images.pexels.com/photos/3434562/pexels-photo-3434562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   padding-bottom: 35px;
 }
@@ -70,7 +71,7 @@ body {
 #link-tree a {
   width: 75vw;
   text-align: center;
-  padding: 2.5vh 5vw 2.5vh 5vw;
+  padding: 15px 0px 15px 0px;
   font-size: 1.5rem;
   color: white;
   font-weight: bold;
