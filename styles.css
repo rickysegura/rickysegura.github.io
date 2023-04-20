@@ -56,7 +56,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 15px;
+  padding-bottom: 35px;
 }
 
 #link-tree {
@@ -106,8 +106,9 @@ body {
   background-repeat: no-repeat;
   width: 35vw;
   height: 35vw;
-  border-radius: 2.5%;
-  margin-top: 15px;
+  border-radius: 100%;
+  margin-top: 35px;
+  border: 2px solid white;
 }
 
 #user-vid { background-color: #333; }
@@ -126,4 +127,5 @@ body {
   position: absolute;
   object-fit: cover;
   z-index: 0;
+  border-bottom: 2px solid white;
 }
