@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Share+Tech+Mono&family=Tilt+Prism&display=swap');
 
 ::-webkit-scrollbar{width:10px;}
 ::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px;}
@@ -9,7 +8,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 /* Style the navigation menu */
@@ -48,7 +47,7 @@ body {
 }
 
 /* Style the active link (or home/logo) */
-/*.active {}*/
+.active { font-family: 'Tilt Prism', cursive; }
 
 #myLinks { background: rgba(255, 255, 255, .25); }
 
@@ -101,7 +100,7 @@ body {
 #bio h1, h2 {
   color: white;
   letter-spacing: 2px;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Rubik Wet Paint', cursive;
 }
 
 .neonText {
