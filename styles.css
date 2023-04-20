@@ -55,7 +55,6 @@ body {
   background-image: url("https://images.pexels.com/photos/3434562/pexels-photo-3434562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
   padding-bottom: 35px;
 }
@@ -70,14 +69,26 @@ body {
 
 #link-tree a {
   width: 75vw;
-  text-align: center;
-  padding: 15px 0px 15px 0px;
   font-size: 1.5rem;
   color: white;
-  font-weight: bold;
-  background: rgba(0, 0, 0, .5);
+  background: rgba( 0, 0, 0, .5);
   text-decoration: none;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+}
+
+#link-tree a i {
+  padding: 15px 0px 15px 0px;
+  width: 25%;
+  text-align: center;
+  background-color: black;
+}
+
+#link-tree a span {
+  padding: 15px 0px 15px 0px;
+  width: 75%;
+  text-align: center;
 }
 
 #bio {
