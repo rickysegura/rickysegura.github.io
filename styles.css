@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Rubik+Wet+Paint&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Libre+Barcode+39+Text&family=Nosifer&family=Racing+Sans+One&family=Rampart+One&family=Rubik+Wet+Paint&family=Share+Tech+Mono&display=swap');
 
 ::-webkit-scrollbar{width:10px;}
 ::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px;}
@@ -45,15 +45,19 @@ body {
 }
 
 /* Style the active link (or home/logo) */
-.active { font-family: 'Goldman', cursive; }
+.active { font-family: 'Racing Sans One', cursive; }
 
 /*#myLinks { background: #333; }*/
 
 #tree-container {
+  /*
   background-image: url("https://images.pexels.com/photos/3434562/pexels-photo-3434562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  */
+
+  background-color: black;
   padding-bottom: 35px;
 }
 
@@ -68,8 +72,6 @@ body {
 #link-tree a {
   width: 75vw;
   font-size: 1.5rem;
-  color: white;
-  background: rgba( 0, 0, 0, .5);
   text-decoration: none;
   text-transform: uppercase;
   display: flex;
@@ -80,13 +82,17 @@ body {
   padding: 15px 0px 15px 0px;
   width: 25%;
   text-align: center;
-  background-color: black;
+  background-color: white;
+  color: black;
+  border-right: 1px solid black;
 }
 
 #link-tree a span {
   padding: 15px 0px 15px 0px;
   width: 75%;
   text-align: center;
+  color: black;
+  background-color: white;
 }
 
 #bio {
@@ -96,9 +102,9 @@ body {
 }
 
 #bio h1, h2 {
-  color: white;
-  letter-spacing: 2px;
-  font-family: 'Goldman', cursive;
+  color: crimson;
+  /*font-family: 'Libre Barcode 39 Text', cursive;*/
+  font-family: 'Nosifer', cursive;
 }
 
 #bio-img {
@@ -112,7 +118,7 @@ body {
   margin-top: 35px;
 }
 
-#user-vid { background-color: #333; }
+#user-vid { background-color: white; }
 
 #twitter-feed { background-color: #222; }
 
@@ -128,4 +134,17 @@ body {
   position: absolute;
   object-fit: cover;
   z-index: 0;
+}
+
+.neonText {
+  color: #fff;
+  text-shadow:
+    0 0 1px white,
+    0 0 2px white,
+    0 0 5px white,
+    0 0 15px crimson,
+    0 0 25px crimson,
+    0 0 35px crimson,
+    0 0 50px crimson,
+    0 0 100px crimson;
 }
