@@ -1,3 +1,10 @@
+/*
+  Code written by Ricky Segura
+  Los Angeles, California, United States of America
+
+  devrickysegura@gmail.com
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Libre+Barcode+39+Text&family=Nosifer&family=Racing+Sans+One&family=Rampart+One&family=Rubik+Wet+Paint&family=Share+Tech+Mono&display=swap');
 
 ::-webkit-scrollbar{width:10px;}
@@ -9,6 +16,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Share Tech Mono', monospace;
+  background-color: black;
 }
 
 /* Style the navigation menu */
@@ -50,13 +58,6 @@ body {
 /*#myLinks { background: #333; }*/
 
 #tree-container {
-  /*
-  background-image: url("https://images.pexels.com/photos/3434562/pexels-photo-3434562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  */
-
   background-color: black;
   padding-bottom: 35px;
 }
@@ -95,33 +96,6 @@ body {
   background-color: white;
 }
 
-#bio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  align-items: center;
-}
-
-#bio h1, h2 {
-  width: 100%;
-  text-align: center;
-  color: white;
-  /*font-family: 'Libre Barcode 39 Text', cursive;*/
-  font-family: 'Nosifer', cursive;
-}
-
-#bio-img {
-  background-image: url("one.jpeg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 35vw;
-  height: 35vw;
-  border-radius: 100%;
-  margin-top: 35px;
-}
-
 #user-vid { background-color: white; }
 
 #twitter-feed { background-color: #222; }
@@ -138,4 +112,42 @@ body {
   position: absolute;
   object-fit: cover;
   z-index: 0;
+}
+
+.container {
+  position: relative;
+  width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  overflow: hidden;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.text{
+  font-family: 'Libre Barcode 39 Text', cursive;
+
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+}
+
+.text_hide{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+}
+
+.text_cursor{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-left: 3px solid white;
 }
