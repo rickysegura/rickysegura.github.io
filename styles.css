@@ -99,9 +99,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  align-items: center;
 }
 
 #bio h1, h2 {
+  width: 100%;
+  text-align: center;
   color: white;
   /*font-family: 'Libre Barcode 39 Text', cursive;*/
   font-family: 'Nosifer', cursive;
