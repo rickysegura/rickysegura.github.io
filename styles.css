@@ -48,7 +48,7 @@ body {
 
 /* Add a grey background color on mouse-over */
 .topnav a:hover {
-  background-color: #333;
+  background-color: black;
   color: white;
 }
 
@@ -78,6 +78,9 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+#first_link { animation: bounce 1s infinite alternate; }
+@keyframes bounce { to { transform: scale(1.15); } }
 
 #link-tree a i {
   padding: 15px 0px 15px 0px;
