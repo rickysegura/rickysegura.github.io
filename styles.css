@@ -63,11 +63,11 @@ body {
 }
 
 #link-tree {
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   row-gap: 25px;
   align-items: center;
-  margin-top: 15px;
 }
 
 #link-tree a {
@@ -79,10 +79,28 @@ body {
   flex-direction: row;
 }
 
+.out-link {
+  width: 75vw;
+  margin: auto;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+}
+
+#brand-img {
+  background-image: url("logo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
 .animated_link { animation: bounce 1s infinite alternate; }
 @keyframes bounce { to { transform: scale(1.15); } }
 
-#link-tree a i {
+#link-tree a i, .out-link i {
   padding: 15px 0px 15px 0px;
   width: 25%;
   text-align: center;
@@ -91,7 +109,7 @@ body {
   border-right: 1px solid black;
 }
 
-#link-tree a span {
+#link-tree a span, .out-link span {
   padding: 15px 0px 15px 0px;
   width: 75%;
   text-align: center;
@@ -153,4 +171,31 @@ body {
   right: 0;
   background-color: transparent;
   border-left: 3px solid white;
+}
+
+.photoWall {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.photo {
+  margin: auto;
+  width: 75vw;
+  height: 75vw;
+  margin-bottom: 5vh;
+}
+
+#img-1 {
+  background-image: url("https://pbs.twimg.com/media/FpuaBzFaMAAbR3S?format=jpg&name=large");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#img-2 {
+  background-image: url("https://pbs.twimg.com/media/FpuZlkQagAA0-m6?format=jpg&name=large");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
