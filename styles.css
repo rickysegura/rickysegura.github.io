@@ -71,7 +71,7 @@ body {
 }
 
 #link-tree a {
-  width: 75vw;
+  width: 80vw;
   font-size: 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -80,7 +80,7 @@ body {
 }
 
 .out-link {
-  width: 75vw;
+  width: 80vw;
   margin: auto;
   font-size: 1.5rem;
   text-decoration: none;
@@ -95,10 +95,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
+  border: 2px solid white;
 }
 
-.animated_link { animation: bounce 1s infinite alternate; }
-@keyframes bounce { to { transform: scale(1.15); } }
+.animated_link { animation: bounce .75s infinite alternate; }
+@keyframes bounce { to { transform: scale(1.10); } }
 
 #link-tree a i, .out-link i {
   padding: 15px 0px 15px 0px;
@@ -119,7 +120,10 @@ body {
 
 #user-vid { background-color: white; }
 
-#twitter-feed { background-color: #222; }
+#twitter-feed {
+  border-top: 2px solid white;
+  background-color: #222;
+}
 
 .video-container {
   height: 300px;
@@ -137,7 +141,7 @@ body {
 
 .container {
   position: relative;
-  width: 75vw;
+  width: 80vw;
   margin-left: auto;
   margin-right: auto;
 
@@ -181,8 +185,8 @@ body {
 
 .photo {
   margin: auto;
-  width: 75vw;
-  height: 75vw;
+  width: 80vw;
+  height: 80vw;
   margin-bottom: 5vh;
 }
 
