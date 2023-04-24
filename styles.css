@@ -2,6 +2,8 @@
   Code written by Ricky Segura
   Los Angeles, California, United States of America
 
+  Thank you for stopping by!
+
   devrickysegura@gmail.com
 */
 
@@ -11,6 +13,12 @@
 ::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px;}
 ::-webkit-scrollbar-thumb{background:#333;border-radius:10px;}
 ::-webkit-scrollbar-thumb:hover{background:#555;}
+
+* {
+  --color: #166e67;
+  --gap: 0.5rem;
+  --radius: 0px;
+}
 
 body {
   padding: 0;
@@ -55,7 +63,7 @@ body {
 /* Style the active link (or home/logo) */
 .active { font-family: 'Racing Sans One', cursive; }
 
-/*#myLinks { background: #333; }*/
+/*#myLinks {}*/
 
 #tree-container {
   background-color: black;
@@ -118,7 +126,11 @@ body {
   background-color: white;
 }
 
-#user-vid { background-color: white; }
+#user-vid {
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  background-color: white;
+}
 
 #twitter-feed {
   border-top: 2px solid white;
@@ -202,4 +214,80 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--gap);
+  padding: 0.6rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  border: none;
+  position: relative;
+  width: 50vw;
+  font-family: 'Racing Sans One', cursive;
+}
+
+.bx {
+  font-size: 1.1rem;
+}
+
+.dropdown {
+  z-index: 1;
+  position: absolute;
+  width: 250px;
+  top: 5vh;
+  left: 35vw;
+  border-radius: var(--radius);
+  margin-top: 0.3rem;
+  background: white;
+  box-shadow: 10px 5px 5px #333;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  column-gap: var(--gap);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: var(--color);
+  color: black;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0rem);
+}
+
+.arrow {
+  transform: rotate(180deg);
+  transition: 0.2s ease;
+}
+
+#nav {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#location {
+  text-align: center;
+  width: 50vw;
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
 }

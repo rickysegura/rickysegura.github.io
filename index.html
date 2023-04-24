@@ -2,6 +2,8 @@
   Designed & developed by Ricky Segura
   Los Angeles, California, United States of America
 
+  Thanks for stopping by!
+
   devrickysegura@gmail.com
 -->
 
@@ -16,21 +18,31 @@
     <script src="jquery-3.6.4.min.js"></script>
     <script src="https://kit.fontawesome.com/5885002872.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   </head>
   <body>
     <div id="app">
       <!-- Top Navigation Menu -->
-      <div class="topnav">
-        <a href="#home" class="active"><i class="fa-solid fa-location-dot"></i> Los Angeles, CA</a>
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks">
-          <a href="https://apod.w3spaces.com/" style="color:white;background-color:crimson;border-bottom:1px solid black;">APOD</a>
-          <a href="https://www.buymeacoffee.com/papibones" style="color:white;background-color:crimson;">Buy Me A Coffee ☕</a>
+      <div id="nav">
+        <a href="javascript:void(0)" id="location" class="active"><i class="fa-solid fa-location-dot"></i> California, USA</a>
+        <button class="btn" id="btn">MORE <i class="bx bx-chevron-down" id="arrow"></i></button>
+        
+        <div class="dropdown" id="dropdown">
+          <a href="sms:+18182993298?&body=Hi%2520there%252C%2520I%2527d%2520like%2520to%2520place%2520an%2520order%2520for...">
+            <i class='bx bx-message-square'></i>
+            Text Me
+          </a>
+
+          <a href="https://www.buymeacoffee.com/papibones">
+            <i class='bx bx-coffee-togo'></i>
+            Buy Me A Coffee
+          </a>
+
+          <a href="https://cash.app/$sfvghost2022/4.99">
+            <i class='bx bx-money-withdraw'></i>
+            CashApp Me
+          </a>
         </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
       </div>
 
       <section id="user-vid">
@@ -75,7 +87,7 @@
 
             <a href="mailto:devrickysegura@gmail.com">
               <i class="fa-solid fa-envelope"></i>
-              <span>Contact</span>
+              <span>Email</span>
             </a>
           </section>
         </div>
@@ -90,7 +102,7 @@
     <div id="twitter-feed">
       <a class="twitter-timeline" data-height="300" data-theme="dark" href="https://twitter.com/myneospaces?ref_src=twsrc%5Etfw">Tweets by myneospaces</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-
+    
     <script src="main.js"></script>
   </body>
 </html>

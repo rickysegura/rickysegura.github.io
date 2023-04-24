@@ -2,18 +2,28 @@
     Code developed by Ricky Segura
     Los Angeles, California, United States of America
 
+    Thank you for stopping by!
+
     devrickysegura@gmail.com
 */
+    const dropdownBtn = document.getElementById("btn");
+    const dropdownMenu = document.getElementById("dropdown");
+    const toggleArrow = document.getElementById("arrow");
 
-      // Side Menu
-      function myFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
+    // Toggle dropdown function
+    const toggleDropdown = () => {
+    dropdownMenu.classList.toggle("show");
+    toggleArrow.classList.toggle("arrow");
+    };
+
+    // Toggle dropdown open/close when dropdown button is clicked
+    dropdownBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleDropdown();
+    });
+
+    // Close dropdown when dom element is clicked
+    document.documentElement.addEventListener("click", () => { if (dropdownMenu.classList.contains("show")) { toggleDropdown(); } });
 
       // Typing Animation
       function typing_animation() {
