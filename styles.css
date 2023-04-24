@@ -79,7 +79,7 @@ body {
   flex-direction: row;
 }
 
-#first_link { animation: bounce 1s infinite alternate; }
+.animated_link { animation: bounce 1s infinite alternate; }
 @keyframes bounce { to { transform: scale(1.15); } }
 
 #link-tree a i {
