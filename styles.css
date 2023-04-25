@@ -85,9 +85,12 @@ body {
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
+  border-radius: 25px;
 }
 
 .out-link {
+  border-radius: 25px;
+
   width: 80vw;
   margin: auto;
   font-size: 1.5rem;
@@ -116,6 +119,8 @@ body {
   background-color: white;
   color: black;
   border-right: 1px solid black;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 #link-tree a span, .out-link span {
@@ -124,6 +129,8 @@ body {
   text-align: center;
   color: black;
   background-color: white;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 #user-vid {
@@ -315,4 +322,19 @@ body {
   color: white;
   text-decoration: none;
   text-transform: capitalize;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+footer span { font-family: 'Racing Sans One', cursive; }
+
+footer span a {
+  text-decoration: none;
+  color: crimson;
 }
