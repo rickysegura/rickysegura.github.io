@@ -157,8 +157,18 @@ body {
   margin-right: auto;
 
   overflow: hidden;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 35px;
+}
+
+#bio-descr {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 80vw;
+  font-family: 'Share Tech Mono', monospace;
+  
+  color: white;
+  margin-bottom: 35px;
 }
 
 .text {
