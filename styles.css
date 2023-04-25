@@ -127,8 +127,7 @@ body {
 }
 
 #user-vid {
-  border-bottom: 2px solid white;
-  border-top: 2px solid white;
+  border-top: 1px solid white;
   background-color: white;
 }
 
@@ -214,6 +213,22 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#img-3 {
+  background-image: url("https://pbs.twimg.com/media/FryOiFracAAYMv4?format=png&name=small");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top: 2px solid white;
+}
+
+#img-4 {
+  background-image: url("https://pbs.twimg.com/media/FryOjBaakAEb_Yf?format=png&name=small");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top: 2px solid white;
 }
 
 .btn {
