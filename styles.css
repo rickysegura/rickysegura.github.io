@@ -27,6 +27,10 @@ body {
   background-color: black;
 }
 
+main {
+  overflow: hidden;
+}
+
 /* Style the navigation menu */
 .topnav {
   overflow: hidden;
@@ -79,7 +83,7 @@ body {
 }
 
 #link-tree a {
-  width: 80vw;
+  width: 90vw;
   font-size: 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -91,7 +95,7 @@ body {
 .out-link {
   border-radius: 25px;
 
-  width: 80vw;
+  width: 90vw;
   margin: auto;
   font-size: 1.5rem;
   text-decoration: none;
@@ -110,7 +114,7 @@ body {
 }
 
 .animated_link { animation: bounce .75s infinite alternate; }
-@keyframes bounce { to { transform: scale(1.10); } }
+@keyframes bounce { to { transform: scale(1.05); } }
 
 #link-tree a i, .out-link i {
   padding: 15px 0px 15px 0px;
