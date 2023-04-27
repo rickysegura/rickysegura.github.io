@@ -137,15 +137,9 @@ main {
   border-bottom-right-radius: 25px;
 }
 
-#user-vid {
-  border-top: 1px solid white;
-  background-color: white;
-}
+#user-vid { background-color: white; }
 
-#twitter-feed {
-  border-top: 2px solid white;
-  background-color: #222;
-}
+#twitter-feed { background-color: #222; }
 
 .video-container {
   height: 300px;
@@ -210,14 +204,15 @@ main {
 }
 
 .photoWall {
-  display: flex;
-  flex-direction: column;
   width: 100%;
 }
 
 .photo {
-  width: 100%;
+  width: 90%;
   height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
 }
 
 #img-1 {
@@ -225,25 +220,10 @@ main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  /*
   border-bottom: 2px solid white;
   border-top: 2px solid white;
-}
-
-#img-2 {
-  background-image: url("plane.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-top: 2px solid white;
-}
-
-#img-3 {
-  background-image: url("https://pbs.twimg.com/media/FryOjBaakAEb_Yf?format=png&name=small");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  */
 }
 
 .btn {
