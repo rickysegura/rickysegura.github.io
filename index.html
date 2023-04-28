@@ -1,6 +1,6 @@
 <!--
   Designed & developed by Ricky Segura
-  California, USA
+  Los Angeles, California, United States of America
 
   Thanks for stopping by!
 
@@ -13,82 +13,104 @@
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NeoSpaces</title>
+    <title>Ricky Segura</title>
 
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  
+    <script src="jquery-3.6.4.min.js"></script>
     <script src="https://kit.fontawesome.com/5885002872.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-bottom">
-      <!-- Brand -->
-      <a class="navbar-brand" href="#"><img src="logo.jpg" alt="Logo" style="width:40px;"> NeoSpaces</a>
-      <!--<a class="navbar-brand" href="#">NeoSpaces</a>-->
-    
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fa-brands fa-twitter"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fa-solid fa-envelope"></i></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div id="app">
+      <!-- Top Navigation Menu -->
+      <div id="nav">
+        <a href="javascript:void(0)" id="location" class="active"><i class="fa-solid fa-location-dot"></i> California, USA</a>
+        <button class="btn" id="btn">MORE <i class="bx bx-chevron-down" id="arrow"></i></button>
+        
+        <div class="dropdown" id="dropdown">
+          <a href="sms:+18182993298?&body=Hi%2520there%252C%2520I%2527d%2520like%2520to%2520place%2520an%2520order%2520for...">
+            <i class='bx bx-message-square'></i>
+            Text Me
+          </a>
 
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid bg-dark text-white">
-      <div class="container">
-        <h1 style="font-family: 'Racing Sans One', cursive;">NeoSpaces</h1>      
-        <p>Transform Your Online Presence with Custom Web Design Solutions</p>
+          <a href="https://www.buymeacoffee.com/papibones">
+            <i class='bx bx-coffee-togo'></i>
+            Buy Me A Coffee
+          </a>
+
+          <a href="https://cash.app/$sfvghost2022/4.99">
+            <i class='bx bx-money-withdraw'></i>
+            CashApp Me
+          </a>
+        </div>
       </div>
+
+      <section id="user-vid">
+        <iframe width="100%" height="360" src="https://www.youtube.com/embed/9WkIEGLt0gw" title="WE OUTSIDE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!--<video src="yuh2.mp4" width="100%" height="100%" autoplay loop controls poster="placeholder2.png"></video>-->
+      </section>
+
+      <main>
+        <div class="container">
+          <div class="text_hide"></div>
+          <div class="text">rickysegura</div>
+          <div class="text_cursor"></div>
+        </div>
+
+        <div id="bio-descr">
+          <p>Los Angeles-based web designer. 22 years old.</p>
+        </div>
+
+        <div id="tree-container">
+          <div id="outerLinks">
+            <a href="https://myneospaces.com/" class="animated_link out-link">
+              <i id="brand-img"></i>
+              <span>NeoSpaces</span>
+            </a>
+          </div>
+
+          <section id="link-tree">
+            <a href="https://github.com/rickysegura">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            
+            <a href="https://www.twitch.tv/icylilnarco">
+              <i class="fa-brands fa-twitch"></i>
+              <span>Twitch</span>
+            </a>
+
+            <a href="https://www.instagram.com/tsaheyluxbones/">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+
+            <a href="https://twitter.com/theicybones">
+              <i class="fa-brands fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+
+            <a href="mailto:devrickysegura@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email</span>
+            </a>
+          </section>
+        </div>
+      </main>
     </div>
 
-    <!-- Main body -->
-    <main>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="container">
-            <div id="img-1"></div>
-            <h2>E.1</h2>
+    <div id="photoWall">
+      <div class="photo" id="img-1" title="Photo of venue"></div>
+    </div>
 
-            <p>Link tree design which incorporates responsive navigation and overall design, YouTube video embed, custom animations, photographs, and Twitter timeline embed.</p>
-          </div>
-        </div>
+    <div id="twitter-feed">
+      <a class="twitter-timeline" data-height="300" data-theme="dark" href="https://twitter.com/myneospaces?ref_src=twsrc%5Etfw">Tweets by myneospaces</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
 
-        <div class="col-sm-6">
-          <div class="container">
-            <div id="img-2"></div>
-            <h2>E.2</h2>
+    <footer>
+      <span>Copyright &copy;2023 Ricky Segura. Powered by <a href="">NeoSpaces</a></span>
+    </footer>
 
-            <p>Link tree design with parallax background effect, Twitter timeline embed, and custom links.</p>
-          </div>
-        </div>
-      </div>      
-    </main>
+    <script src="main.js"></script>
   </body>
 </html>

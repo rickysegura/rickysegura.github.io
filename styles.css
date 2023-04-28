@@ -1,0 +1,309 @@
+/*
+  Code written by Ricky Segura
+  Los Angeles, California, United States of America
+
+  Thank you for stopping by!
+
+  devrickysegura@gmail.com
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Libre+Barcode+39+Text&family=Nosifer&family=Racing+Sans+One&family=Rampart+One&family=Rubik+Wet+Paint&family=Share+Tech+Mono&display=swap');
+
+::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px;}
+::-webkit-scrollbar-thumb{background:#333;border-radius:10px;}
+::-webkit-scrollbar-thumb:hover{background:#555;}
+
+* {
+  --color: #166e67;
+  --gap: 0.5rem;
+  --radius: 0px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: black;
+}
+
+main {
+  overflow: hidden;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background: rgba(0, 0, 0, 1);
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks { display: none; }
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Style the active link (or home/logo) */
+.active { font-family: 'Racing Sans One', cursive; }
+
+/*#myLinks {}*/
+
+#tree-container {
+  background-color: black;
+  padding-bottom: 35px;
+}
+
+#link-tree {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  align-items: center;
+}
+
+#link-tree a {
+  width: 90vw;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+}
+
+.out-link {
+  border-radius: 25px;
+
+  width: 90vw;
+  margin: auto;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+}
+
+#brand-img {
+  background-image: url("logo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  border: 2px solid white;
+}
+
+.animated_link { animation: bounce .75s infinite alternate; }
+@keyframes bounce { to { transform: scale(1.05); } }
+
+#link-tree a i, .out-link i {
+  padding: 15px 0px 15px 0px;
+  width: 25%;
+  text-align: center;
+  background-color: white;
+  color: black;
+  border-right: 1px solid black;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#link-tree a span, .out-link span {
+  padding: 15px 0px 15px 0px;
+  width: 75%;
+  text-align: center;
+  color: black;
+  background-color: white;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+#user-vid { background-color: white; }
+
+#twitter-feed { background-color: #222; }
+
+.video-container {
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+
+.video-container video {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  overflow: hidden;
+  margin-top: 35px;
+}
+
+#bio-descr {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 80vw;
+  font-family: 'Share Tech Mono', monospace;
+  
+  color: white;
+  margin-bottom: 35px;
+}
+
+.text {
+  font-family: 'Libre Barcode 39 Text', cursive;
+
+  font-size: 2.5rem;
+  color: crimson;
+  text-align: center;
+}
+
+.text_hide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+}
+
+.text_cursor{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-left: 3px solid white;
+}
+
+.photoWall { width: 100%; }
+
+.photo {
+  width: 90%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+#img-1 {
+  background-image: url("https://pbs.twimg.com/media/FpuaBzFaMAAbR3S?format=jpg&name=large");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--gap);
+  padding: 0.6rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  border: none;
+  position: relative;
+  width: 50vw;
+  font-family: 'Racing Sans One', cursive;
+}
+
+.bx { font-size: 1.1rem; }
+
+.dropdown {
+  z-index: 1;
+  position: absolute;
+  width: 250px;
+  top: 5vh;
+  left: 35vw;
+  border-radius: var(--radius);
+  margin-top: 0.3rem;
+  background: white;
+  box-shadow: 10px 5px 5px #333;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  column-gap: var(--gap);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: var(--color);
+  color: black;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0rem);
+}
+
+.arrow {
+  transform: rotate(180deg);
+  transition: 0.2s ease;
+}
+
+#nav {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#location {
+  text-align: center;
+  width: 50vw;
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+footer span { font-family: 'Racing Sans One', cursive; }
+
+footer span a {
+  text-decoration: none;
+  color: crimson;
+}
