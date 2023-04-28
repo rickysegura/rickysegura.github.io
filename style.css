@@ -1,0 +1,43 @@
+/*
+  Styling by Ricky Segura
+  California, USA
+
+  Thanks for stopping by!
+
+  devrickysegura@gmail.com
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Libre+Barcode+39+Text&family=Nosifer&family=Racing+Sans+One&family=Rampart+One&family=Rubik+Wet+Paint&family=Share+Tech+Mono&display=swap');
+
+body {
+  background-color: #fff;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.nav-item { text-align: center; }
+
+.navbar-brand { font-family: 'Racing Sans One', cursive; }
+
+main { overflow-x: hidden; }
+
+#img-1 {
+  background-image: url("tree.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 400px;
+}
+
+#img-2 {
+  background-image: url("product3-desktop.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 400px;
+}
+
+main { padding-bottom: 75px; }
