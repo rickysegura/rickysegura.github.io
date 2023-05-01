@@ -25,9 +25,14 @@
       <!-- Top Navigation Menu -->
       <div id="nav">
         <a href="javascript:void(0)" id="location" class="active"><i class="fa-solid fa-location-dot"></i> California, USA</a>
-        <button class="btn" id="btn">MORE <i class="bx bx-chevron-down" id="arrow"></i></button>
+        <button class="btn" id="btn">More Options <i class="bx bx-chevron-down" id="arrow"></i></button>
         
         <div class="dropdown" id="dropdown">
+          <a href="https://calendly.com/neospaces/discovery-call" target="_blank">
+            <i class="fa-solid fa-calendar-check"></i>
+            Book Discovery Call
+          </a>
+
           <a href="sms:+18182993298?&body=Hi%2520there%252C%2520I%2527d%2520like%2520to%2520place%2520an%2520order%2520for...">
             <i class='bx bx-message-square'></i>
             Text Me
@@ -115,6 +120,12 @@
     <footer>
       <span>Copyright &copy;2023 Ricky Segura. Powered by <a href="">NeoSpaces</a></span>
     </footer>
+
+    <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/neospaces/discovery-call', text: "Book Discovery Call", color: '#1a1a1a', textColor: '#ffffff', branding: true }); }</script>
+    <!-- Calendly badge widget end -->
 
     <script src="main.js"></script>
   </body>

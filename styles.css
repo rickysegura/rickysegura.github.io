@@ -86,7 +86,6 @@ main {
   width: 90vw;
   font-size: 1.5rem;
   text-decoration: none;
-  text-transform: uppercase;
   display: flex;
   flex-direction: row;
   border-radius: 25px;
@@ -99,7 +98,6 @@ main {
   margin: auto;
   font-size: 1.5rem;
   text-decoration: none;
-  text-transform: uppercase;
   display: flex;
   flex-direction: row;
 }
