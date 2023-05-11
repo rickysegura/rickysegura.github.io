@@ -314,5 +314,5 @@ footer span a {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  margin-bottom: 25px;
+  margin: 0px auto 25px auto;
 }
