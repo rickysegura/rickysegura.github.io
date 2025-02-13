@@ -1,10 +1,5 @@
 /*
-  Code written by Ricky Segura
-  Los Angeles, California, United States of America
-
-  Thank you for stopping by!
-
-  devrickysegura@gmail.com
+* Style by Ricky Segura
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Libre+Barcode+39+Text&family=Nosifer&family=Racing+Sans+One&family=Rampart+One&family=Rubik+Wet+Paint&family=Share+Tech+Mono&display=swap');
@@ -102,7 +97,7 @@ main {
 }
 
 #brand-img {
-  background-image: url("logo.jpg");
+  background-image: url("./images/logo\ -\ web\ dev.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -210,13 +205,6 @@ main {
   margin-bottom: 25px;
 }
 
-#img-1 {
-  background-image: url("https://pbs.twimg.com/media/FpuaBzFaMAAbR3S?format=jpg&name=large");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .btn {
   background-color: black;
   color: white;
@@ -309,7 +297,7 @@ footer span a {
   position: relative;
   width: 100%;
   height: 400px;
-  background-image: url("drone.jpg");
+  background-image: url("./images/LA.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
