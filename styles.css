@@ -87,7 +87,6 @@ main {
 
 .out-link {
   border-radius: 25px;
-
   width: 90vw;
   margin: auto;
   font-size: 1.5rem;
@@ -97,9 +96,9 @@ main {
 }
 
 #brand-img {
-  background-image: url("./images/logo\ -\ web\ dev.png");
+  background-image: url("./images/author.PNG");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: black;
   border: 2px solid white;
@@ -163,14 +162,12 @@ main {
   text-align: center;
   width: 80vw;
   font-family: 'Share Tech Mono', monospace;
-  
   color: white;
   margin-bottom: 50px;
 }
 
 .text {
   font-family: 'Libre Barcode 39 Text', cursive;
-
   font-size: 2.5rem;
   color: crimson;
   text-align: center;
