@@ -26,7 +26,7 @@ h4, p {
 
 h4 {
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
 }
 
 p {
