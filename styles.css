@@ -17,9 +17,10 @@ body {
 
 img {
   border: 5px double white;
-  border-radius: 4px;
-  height: 75px;
-  width: 75px;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 5px;
 }
 
 h1 {
@@ -80,8 +81,8 @@ span {
   margin: auto;
   margin-top: 5%;
   padding: clamp(15px, 3vw, 20px);
-  border-radius: 4px;
-  border: 2px solid white;
+  border-radius: 5px;
+  border: 1px solid white;
   box-shadow: 10px 10px 25px white;
   position: relative;
 }
@@ -374,7 +375,7 @@ span {
 @media screen and (max-width: 480px) {
   #markdown-canvas {
     margin-top: 2vh;
-    height: 250px;
+    height: 300px;
     width: 90vw;
   }
 
