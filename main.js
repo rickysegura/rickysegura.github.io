@@ -1,169 +1,140 @@
-/*
-* Programming by Ricky Segura
-*/
+class SimpleAudioPlayer {
+  constructor() {
+    this.audio = new Audio();
+    this.audio.loop = false;
+    this.audio.preload = 'auto';
+    
+    // Make it hidden background audio
+    this.audio.style.display = 'none';
+    document.body.appendChild(this.audio);
+    
+    // Track if audio is ready to play
+    this.isReady = false;
+    this.pendingPlay = null;
+    
+    // Set up event listeners
+    this.audio.addEventListener('canplaythrough', () => {
+      this.isReady = true;
+      console.log('Audio loaded and ready to play');
+    });
+    
+    this.audio.addEventListener('error', (e) => {
+      console.error('Audio error:', e);
+      console.error('Failed to load:', this.audio.src);
+    });
+  }
 
-const dropdownBtn = document.getElementById("btn");
-const dropdownMenu = document.getElementById("dropdown");
-const toggleArrow = document.getElementById("arrow");
-
-// Toggle dropdown function
-const toggleDropdown = () => {
-dropdownMenu.classList.toggle("show");
-toggleArrow.classList.toggle("arrow");
-};
-
-// Toggle dropdown open/close when dropdown button is clicked
-dropdownBtn.addEventListener("click", (e) => {
-e.stopPropagation();
-toggleDropdown();
-});
-
-// Close dropdown when dom element is clicked
-document.documentElement.addEventListener("click", () => { if (dropdownMenu.classList.contains("show")) { toggleDropdown(); } });
-
-    // Typing Animation
-    function typing_animation() {
-    let text_element = document.querySelector(".text");
-    let text_array = text_element.innerHTML.split("");
-    let text_array_slice = text_element.innerHTML.split(" ");
-    let text_len = text_array.length;
-
-    const word_len = text_array_slice.map((word) => {
-        return word.length;
-    })
-
-    console.log(word_len);
-
-    let timings = {
-        easing: `steps(${Number(word_len[0] + 1)}, end)`,
-        delay: 2000,
-        duration: 2000,
-        fill: 'forwards'
+  async play(audioUrl, volume = 0.5) {
+    this.audio.src = audioUrl;
+    this.audio.volume = volume;
+    this.pendingPlay = { audioUrl, volume };
+    
+    try {
+      await this.audio.play();
+      console.log('Audio playing successfully');
+    } catch (error) {
+      console.error('Autoplay blocked. Need user interaction first.');
+      console.error('Error:', error.message);
+      
+      // Create a click-to-play button
+      this.createPlayButton();
     }
+  }
 
-    let cursor_timings = {
-        duration: 700,
-        iterations: Infinity,
-        easing: 'cubic-bezier(0,.26,.44,.93)'
-    }
+  createPlayButton() {
+    // Check if button already exists
+    if (document.getElementById('audio-play-btn')) return;
+    
+    const playButton = document.createElement('button');
+    playButton.id = 'audio-play-btn';
+    playButton.innerHTML = '🎵';
+    playButton.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      padding: 10px 15px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      border: 2px solid white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+    `;
+    
+    playButton.addEventListener('click', () => {
+      this.audio.play().then(() => {
+        console.log('Music started after user interaction');
+        playButton.remove();
+      }).catch(error => {
+        console.error('Still failed to play:', error);
+      });
+    });
+    
+    document.body.appendChild(playButton);
+  }
 
-    document.querySelector(".text_cursor").animate([
-        {
-            opacity: 0
-        },
-        {
-            opacity: 0, offset: 0.7
-        },
-        {
-            opacity: 1
-        }
-    ], cursor_timings);
+  pause() {
+    this.audio.pause();
+  }
 
-    if (text_array_slice.length == 1) {
-        timings.easing = `steps(${Number(word_len[0])}, end)`;
+  resume() {
+    this.audio.play().catch(error => {
+      console.error('Resume failed:', error);
+    });
+  }
 
-        let reveal_animation = document.querySelector(".text_hide").animate([
-            { left: '0%' },
-            { left: `${(100 / text_len) * (word_len[0])}%` }
-        ], timings);
+  stop() {
+    this.audio.pause();
+    this.audio.currentTime = 0;
+  }
 
-        document.querySelector(".text_cursor").animate([
-            { left: '0%' },
-            { left: `${(100 / text_len) * (word_len[0])}%` }
-        ], timings);
+  setVolume(volume) {
+    this.audio.volume = Math.max(0, Math.min(1, volume)); // 0-1
+  }
 
-        reveal_animation.onfinish = () => {
-            setTimeout(() => {
-                document.querySelector('.text_hide').animate([
-                    {left: '0%'}
-                ], {
-                    duration: 2000,
-                    easing: 'cubic-bezier(.73,0,.38,.88)'
-                });
-                document.querySelector('.text_cursor').animate([
-                    {left: '0%'}
-                ], {
-                    duration: 2000,
-                    easing: 'cubic-bezier(.73,0,.38,.88)'
-                });
-                typing_animation();
-            }, 1000);
-        }
+  setLoop(loop) {
+    this.audio.loop = loop;
+  }
+}
+
+// Initialize audio player
+const backgroundMusic = new SimpleAudioPlayer();
+
+// Try to play immediately (will likely be blocked)
+backgroundMusic.setLoop(true); // Loop the background music
+backgroundMusic.play("./background.mp3", 0.3); // Lower volume for background
+
+// Alternative: Wait for any user interaction on the page
+let hasInteracted = false;
+
+function enableAudioOnInteraction() {
+  if (hasInteracted) return;
+  
+  hasInteracted = true;
+  backgroundMusic.play("./background.mp3", 0.3);
+  
+  // Remove event listeners after first interaction
+  document.removeEventListener('click', enableAudioOnInteraction);
+  document.removeEventListener('keydown', enableAudioOnInteraction);
+  document.removeEventListener('touchstart', enableAudioOnInteraction);
+}
+
+// Listen for any user interaction
+document.addEventListener('click', enableAudioOnInteraction);
+document.addEventListener('keydown', enableAudioOnInteraction);
+document.addEventListener('touchstart', enableAudioOnInteraction);
+
+// Debug: Check if file exists
+fetch('./background.mp3')
+  .then(response => {
+    if (response.ok) {
+      console.log('✅ background.mp3 file found');
     } else {
-        document.querySelector(".text_hide").animate([
-            { left: '0%' },
-            { left: `${(100 / text_len) * (word_len[0] + 1)}%` }
-        ], timings);
-
-        document.querySelector(".text_cursor").animate([
-            { left: '0%' },
-            { left: `${(100 / text_len) * (word_len[0] + 1)}%` }
-        ], timings);
+      console.error('❌ background.mp3 file not found (404)');
     }
-
-
-    for (let i = 1; i < text_array_slice.length; i++) {
-        console.log(word_len);
-        console.log(text_array_slice.length);
-        const single_word_len = word_len[i];
-        console.log(single_word_len);
-
-        if (i == 1) {
-            var left_instance = (100 / text_len) * (word_len[i - 1] + 1);
-            console.log(left_instance);
-        }
-
-        let timings_2 = {
-            easing: `steps(${Number(single_word_len + 1)}, end)`,
-            delay: (2 * (i + 1) + (2 * i)) * (1000),
-            // delay: ((i*2)-1)*1000,
-            duration: 2000,
-            fill: 'forwards'
-        }
-
-        if (i == (text_array_slice.length - 1)) {
-            timings_2.easing = `steps(${Number(single_word_len)}, end)`;
-            let reveal_animation = document.querySelector(".text_hide").animate([
-                { left: `${left_instance}%` },
-                { left: `${left_instance + ((100 / text_len) * (word_len[i]))}%` }
-            ], timings_2);
-
-            document.querySelector(".text_cursor").animate([
-                { left: `${left_instance}%` },
-                { left: `${left_instance + ((100 / text_len) * (word_len[i]))}%` }
-            ], timings_2);
-
-            reveal_animation.onfinish = () => {
-                setTimeout(() => {
-                    document.querySelector('.text_hide').animate([
-                        {left: '0%'}
-                    ], {
-                        duration: 2000,
-                        easing: 'cubic-bezier(.73,0,.38,.88)'
-                    });
-                    document.querySelector('.text_cursor').animate([
-                        {left: '0%'}
-                    ], {
-                        duration: 2000,
-                        easing: 'cubic-bezier(.73,0,.38,.88)'
-                    });
-                    typing_animation();
-                }, 1000);
-            }
-        } else {
-            document.querySelector(".text_hide").animate([
-                { left: `${left_instance}%` },
-                { left: `${left_instance + ((100 / text_len) * (word_len[i] + 1))}%` }
-            ], timings_2);
-
-            document.querySelector(".text_cursor").animate([
-                { left: `${left_instance}%` },
-                { left: `${left_instance + ((100 / text_len) * (word_len[i] + 1))}%` }
-            ], timings_2);
-        }
-
-        left_instance = left_instance + ((100 / text_len) * (word_len[i] + 1));
-    }
-    }
-
-    typing_animation();
+  })
+  .catch(error => {
+    console.error('❌ Error checking for background.mp3:', error);
+  });
