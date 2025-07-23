@@ -15,18 +15,6 @@ body {
   overflow-x: hidden;
 }
 
-#pfp {
-  background-image: url('./images/pfp1.gif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 5px double white;
-  border-radius: 100%;
-  height: 100px;
-  width: 100px;
-  margin-bottom: 10px;
-}
-
 h1 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin: 0 0 10px 0;
@@ -115,6 +103,18 @@ span {
 #markdown-canvas h4,
 #markdown-canvas p {
   text-shadow: 2px 2px 3px #000;
+}
+
+#pfp {
+  background-image: url('./images/pfp1.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 5px double white;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 10px;
 }
 
 .text-em {
@@ -358,7 +358,7 @@ span {
     height: 500px;
   }
 
-  h1, h4 {
+  h1, h4, p {
     text-align: center;
   }
 
