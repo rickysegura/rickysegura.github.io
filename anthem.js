@@ -47,7 +47,7 @@ class SimpleAudioPlayer {
     
     const playButton = document.createElement('button');
     playButton.id = 'audio-play-btn';
-    playButton.innerHTML = '🎵';
+    playButton.innerHTML = '🎵 Anthem';
     playButton.style.cssText = `
       position: fixed;
       top: 20px;
@@ -58,7 +58,7 @@ class SimpleAudioPlayer {
       color: white;
       border: 2px solid white;
       border-radius: 5px;
-      cursor: crosshair;
+      cursor: pointer;
       font-family: inherit;
       font-size: 14px;
     `;
