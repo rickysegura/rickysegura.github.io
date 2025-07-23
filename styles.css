@@ -2,8 +2,11 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   cursor: crosshair;
+}
+
+body {
   background-image: url('./images/pageBackground.jpg');
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
