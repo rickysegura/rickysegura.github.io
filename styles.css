@@ -15,7 +15,11 @@ body {
   overflow-x: hidden;
 }
 
-img {
+#pfp {
+  background-image: url('./images/pfp1.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 5px double white;
   border-radius: 100%;
   height: 100px;
@@ -354,8 +358,12 @@ span {
     height: 500px;
   }
 
-  h1, h4, #pfp {
+  h1, h4 {
     text-align: center;
+  }
+
+  #pfp {
+    margin: auto;
   }
 }
 
