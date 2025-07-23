@@ -58,7 +58,7 @@ class SimpleAudioPlayer {
       color: white;
       border: 2px solid white;
       border-radius: 5px;
-      cursor: pointer;
+      cursor: crosshair;
       font-family: inherit;
       font-size: 14px;
     `;
