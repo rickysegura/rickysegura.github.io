@@ -119,6 +119,9 @@ function enableAudioOnInteraction() {
   document.removeEventListener('click', enableAudioOnInteraction);
   document.removeEventListener('keydown', enableAudioOnInteraction);
   document.removeEventListener('touchstart', enableAudioOnInteraction);
+
+  // Hide play button
+  document.getElementById("audio-play-btn").style.display = "none";
 }
 
 // Listen for any user interaction
