@@ -131,7 +131,7 @@ class PlaylistAudioPlayer {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 1000;
+      z-index: 5;
       padding: 10px 15px;
       background: rgba(0, 0, 0, 0.8);
       color: white;
@@ -152,7 +152,7 @@ class PlaylistAudioPlayer {
       position: fixed;
       top: 60px;
       right: 20px;
-      z-index: 1000;
+      z-index: 5;
       display: flex;
       gap: 5px;
     `;
