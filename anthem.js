@@ -164,7 +164,7 @@ class PlaylistAudioPlayer {
       background: rgba(0, 0, 0, 0.8);
       color: white;
       border: 1px solid white;
-      border-radius: 3px;
+      border-radius: 5px;
       cursor: pointer;
       font-size: 12px;
     `;
@@ -251,8 +251,9 @@ const backgroundMusic = new PlaylistAudioPlayer();
 
 // Define your playlist here
 const musicPlaylistWithTitles = [
-  { url: "./background.mp3", title: "Takashi Murakami - 6 Dogs" },
-  { url: "./background2.mp3", title: "Already Dead - Juice WRLD" }
+  { url: "./anthems/background.mp3", title: "Takashi Murakami - 6 Dogs" },
+  { url: "./anthems/background2.mp3", title: "Nuketown - Ski Mask the Slump God" },
+  { url: "./anthems/background3.mp3", title: "Wasted - Juice WRLD" }
 ];
 
 // Set up the playlist
