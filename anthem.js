@@ -1,4 +1,4 @@
-class SimpleAudioPlayer {
+class PlaylistAudioPlayer {
   constructor() {
     this.audio = new Audio();
     this.audio.loop = false;
@@ -7,6 +7,10 @@ class SimpleAudioPlayer {
     // Make it hidden background audio
     this.audio.style.display = 'none';
     document.body.appendChild(this.audio);
+    
+    // Playlist management
+    this.playlist = [];
+    this.currentTrackIndex = 0;
     
     // Track if audio is ready to play
     this.isReady = false;
@@ -21,17 +25,55 @@ class SimpleAudioPlayer {
     this.audio.addEventListener('error', (e) => {
       console.error('Audio error:', e);
       console.error('Failed to load:', this.audio.src);
+      // Try next track if current one fails
+      this.playNext();
+    });
+
+    // Auto-advance to next track when current one ends
+    this.audio.addEventListener('ended', () => {
+      console.log('Track ended, advancing to next...');
+      this.playNext();
     });
   }
 
-  async play(audioUrl, volume = 0.5) {
-    this.audio.src = audioUrl;
+  // Set the playlist
+  setPlaylist(tracks) {
+    this.playlist = tracks.map(track => {
+      if (typeof track === 'string') {
+        return { url: track, title: track.split('/').pop().replace('.mp3', '') };
+      }
+      return track; // Assume it's already an object with url and title
+    });
+    
+    this.currentTrackIndex = 0;
+    
+    console.log(`Playlist set with ${this.playlist.length} tracks`);
+    console.log('Tracks:', this.playlist.map(t => t.title));
+  }
+
+  // Get next track index (sequential play only)
+  getNextTrackIndex() {
+    return (this.currentTrackIndex + 1) % this.playlist.length;
+  }
+
+  // Play current track
+  async playCurrentTrack(volume = 0.5) {
+    if (this.playlist.length === 0) {
+      console.warn('No playlist set');
+      return;
+    }
+
+    const currentTrack = this.playlist[this.currentTrackIndex];
+    console.log(`Playing: ${currentTrack.title}`);
+    
+    this.audio.src = currentTrack.url;
     this.audio.volume = volume;
-    this.pendingPlay = { audioUrl, volume };
+    this.pendingPlay = { track: currentTrack, volume };
     
     try {
       await this.audio.play();
       console.log('Audio playing successfully');
+      this.updatePlayButton(`🎵 ${currentTrack.title}`);
     } catch (error) {
       console.error('Autoplay blocked. Need user interaction first.');
       console.error('Error:', error.message);
@@ -41,13 +83,50 @@ class SimpleAudioPlayer {
     }
   }
 
+  // Play next track
+  async playNext() {
+    if (this.playlist.length === 0) return;
+    
+    this.currentTrackIndex = this.getNextTrackIndex();
+    await this.playCurrentTrack(this.audio.volume);
+  }
+
+  // Play previous track
+  async playPrevious() {
+    if (this.playlist.length === 0) return;
+    
+    // Sequential play only - go to previous track
+    this.currentTrackIndex = (this.currentTrackIndex - 1 + this.playlist.length) % this.playlist.length;
+    await this.playCurrentTrack(this.audio.volume);
+  }
+
+  // Skip to specific track
+  async skipToTrack(index) {
+    if (index >= 0 && index < this.playlist.length) {
+      this.currentTrackIndex = index;
+      await this.playCurrentTrack(this.audio.volume);
+    }
+  }
+
+  // Start playlist
+  async startPlaylist(volume = 0.5) {
+    if (this.playlist.length === 0) {
+      console.warn('No playlist to start');
+      return;
+    }
+
+    this.currentTrackIndex = 0;
+    await this.playCurrentTrack(volume);
+  }
+
   createPlayButton() {
     // Check if button already exists
     if (document.getElementById('audio-play-btn')) return;
     
-    const playButton = document.createElement('button');
+    const currentTrack = this.playlist[this.currentTrackIndex];
+    const playButton = document.createElement('div');
     playButton.id = 'audio-play-btn';
-    playButton.innerHTML = '🎵 Anthem';
+    playButton.innerHTML = `🎵 ${currentTrack ? currentTrack.title : 'Playlist'}`;
     playButton.style.cssText = `
       position: fixed;
       top: 20px;
@@ -58,23 +137,66 @@ class SimpleAudioPlayer {
       color: white;
       border: 2px solid white;
       border-radius: 5px;
-      cursor: pointer;
+      cursor: crosshair;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 11px;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     `;
     
-    playButton.addEventListener('click', () => {
-      this.audio.play().then(() => {
-        console.log('Music started after user interaction');
-        playButton.remove();
-      }).catch(error => {
-        console.error('Still failed to play:', error);
-      });
-    });
+    // Add controls for pause/play, next/previous
+    const controlsContainer = document.createElement('div');
+    controlsContainer.style.cssText = `
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 5px;
+    `;
+    
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = '⏮️';
+    prevButton.style.cssText = `
+      padding: 5px 8px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      border: 1px solid white;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 12px;
+    `;
+    prevButton.addEventListener('click', () => this.playPrevious());
+    
+    const pausePlayButton = document.createElement('button');
+    pausePlayButton.id = 'pause-play-btn';
+    pausePlayButton.innerHTML = '▶️';
+    pausePlayButton.style.cssText = prevButton.style.cssText;
+    pausePlayButton.addEventListener('click', () => this.togglePause());
+    
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = '⏭️';
+    nextButton.style.cssText = prevButton.style.cssText;
+    nextButton.addEventListener('click', () => this.playNext());
+    
+    controlsContainer.appendChild(prevButton);
+    controlsContainer.appendChild(pausePlayButton);
+    controlsContainer.appendChild(nextButton);
     
     document.body.appendChild(playButton);
+    document.body.appendChild(controlsContainer);
   }
 
+  updatePlayButton(text) {
+    const playButton = document.getElementById('audio-play-btn');
+    if (playButton) {
+      playButton.innerHTML = text;
+    }
+  }
+
+  // Control methods
   pause() {
     this.audio.pause();
   }
@@ -94,50 +216,69 @@ class SimpleAudioPlayer {
     this.audio.volume = Math.max(0, Math.min(1, volume)); // 0-1
   }
 
-  setLoop(loop) {
-    this.audio.loop = loop;
+  // Toggle pause/play
+  togglePause() {
+    const pausePlayButton = document.getElementById('pause-play-btn');
+    
+    if (this.audio.paused) {
+      this.resume();
+      if (pausePlayButton) pausePlayButton.innerHTML = '⏸️';
+      console.log('Music resumed');
+    } else {
+      this.pause();
+      if (pausePlayButton) pausePlayButton.innerHTML = '▶️';
+      console.log('Music paused');
+    }
+  }
+
+  // Get current track info
+  getCurrentTrack() {
+    return this.playlist[this.currentTrackIndex];
+  }
+
+  // Get playlist info
+  getPlaylistInfo() {
+    return {
+      tracks: this.playlist,
+      currentIndex: this.currentTrackIndex,
+      totalTracks: this.playlist.length
+    };
   }
 }
 
 // Initialize audio player
-const backgroundMusic = new SimpleAudioPlayer();
+const backgroundMusic = new PlaylistAudioPlayer();
 
-// Try to play immediately (will likely be blocked)
-backgroundMusic.setLoop(true); // Loop the background music
-backgroundMusic.play("./background.mp3", 0.3); // Lower volume for background
+// Define your playlist here
+const musicPlaylistWithTitles = [
+  { url: "./background.mp3", title: "Takashi Murakami - 6 Dogs" },
+  { url: "./background2.mp3", title: "Already Dead - Juice WRLD" }
+];
 
-// Alternative: Wait for any user interaction on the page
-let hasInteracted = false;
+// Set up the playlist
+backgroundMusic.setPlaylist(musicPlaylistWithTitles);
 
-function enableAudioOnInteraction() {
-  if (hasInteracted) return;
+// Try to start playlist immediately (will likely be blocked)
+backgroundMusic.startPlaylist(0.3);
+
+// Debug: Check if files exist
+const checkPlaylistFiles = async () => {
+  console.log('🎵 Checking playlist files...');
   
-  hasInteracted = true;
-  backgroundMusic.play("./background.mp3", 0.3);
-  
-  // Remove event listeners after first interaction
-  document.removeEventListener('click', enableAudioOnInteraction);
-  document.removeEventListener('keydown', enableAudioOnInteraction);
-  document.removeEventListener('touchstart', enableAudioOnInteraction);
-
-  // Hide play button
-  document.getElementById("audio-play-btn").style.display = "none";
-}
-
-// Listen for any user interaction
-document.addEventListener('click', enableAudioOnInteraction);
-document.addEventListener('keydown', enableAudioOnInteraction);
-document.addEventListener('touchstart', enableAudioOnInteraction);
-
-// Debug: Check if file exists
-fetch('./background.mp3')
-  .then(response => {
-    if (response.ok) {
-      console.log('✅ background.mp3 file found');
-    } else {
-      console.error('❌ background.mp3 file not found (404)');
+  for (let i = 0; i < backgroundMusic.playlist.length; i++) {
+    const track = backgroundMusic.playlist[i];
+    try {
+      const response = await fetch(track.url);
+      if (response.ok) {
+        console.log(`✅ ${track.title} (${track.url}) - Found`);
+      } else {
+        console.error(`❌ ${track.title} (${track.url}) - Not found (${response.status})`);
+      }
+    } catch (error) {
+      console.error(`❌ ${track.title} (${track.url}) - Error: ${error.message}`);
     }
-  })
-  .catch(error => {
-    console.error('❌ Error checking for background.mp3:', error);
-  });
+  }
+};
+
+// Run the check after a short delay to let the playlist initialize
+setTimeout(checkPlaylistFiles, 1000);
