@@ -253,7 +253,8 @@ const backgroundMusic = new PlaylistAudioPlayer();
 const musicPlaylistWithTitles = [
   { url: "./anthems/background.mp3", title: "Takashi Murakami - 6 Dogs" },
   { url: "./anthems/background2.mp3", title: "Nuketown - Ski Mask the Slump God" },
-  { url: "./anthems/background3.mp3", title: "Wasted - Juice WRLD" }
+  { url: "./anthems/background3.mp3", title: "Wasted - Juice WRLD" },
+  { url: "./anthems/background4.mp3", title: "[unreleased] - Juice WRLD" }
 ];
 
 // Set up the playlist
