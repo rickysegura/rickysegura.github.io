@@ -163,7 +163,7 @@ class PlaylistAudioPlayer {
       padding: 5px 8px;
       background: rgba(0, 0, 0, 0.8);
       color: white;
-      border: 1px solid white;
+      border: 2px solid white;
       border-radius: 5px;
       cursor: pointer;
       font-size: 12px;
@@ -251,10 +251,11 @@ const backgroundMusic = new PlaylistAudioPlayer();
 
 // Define your playlist here
 const musicPlaylistWithTitles = [
-  { url: "./anthems/background.mp3", title: "Takashi Murakami - 6 Dogs" },
-  { url: "./anthems/background2.mp3", title: "Nuketown - Ski Mask the Slump God" },
-  { url: "./anthems/background3.mp3", title: "Wasted - Juice WRLD" },
-  { url: "./anthems/background4.mp3", title: "[unreleased] - Juice WRLD" }
+  { url: "./anthems/takashimurakami.mp3", title: "Takashi Murakami - 6 Dogs" },
+  { url: "./anthems/nuketown.mp3", title: "Nuketown - Ski Mask the Slump God" },
+  { url: "./anthems/wasted.mp3", title: "Wasted (remix) - Juice WRLD" },
+  { url: "./anthems/unreleased.mp3", title: "[unreleased] - Juice WRLD" },
+  { url: "./anthems/90210.mp3", title: "90210 - Blackbear" }
 ];
 
 // Set up the playlist
