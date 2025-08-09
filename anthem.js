@@ -163,7 +163,7 @@ class PlaylistAudioPlayer {
       padding: 5px 8px;
       background: rgba(0, 0, 0, 0.8);
       color: white;
-      border: 2px solid white;
+      border: 2px outset white;
       border-radius: 5px;
       cursor: pointer;
       font-size: 12px;
