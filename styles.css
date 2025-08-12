@@ -2,14 +2,11 @@
 
 * {
   box-sizing: border-box;
-}
-
-html {
   cursor: crosshair;
 }
 
 body {
-  background-image: url('./images/pageBackground.jpg');
+  background-color: slategrey;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
@@ -26,7 +23,7 @@ h1 {
   margin: 0 0 10px 0;
 }
 
-h4, p {
+h1, h4, p {
   color: white;
 }
 
@@ -72,7 +69,8 @@ span {
 }
 
 #markdown-canvas {
-  background-image: url('./images/canvasBackground.jpg');
+  background-image: url('./images/heartless.gif');
+  background-position: center;
   background-size: cover;
   width: min(90vw, 1600px);
   height: 750px;
@@ -81,7 +79,6 @@ span {
   padding: clamp(15px, 3vw, 20px);
   border-radius: 5px;
   border: 1px solid white;
-  /*box-shadow: 10px 10px 25px white;*/
   box-shadow: 0 0 25px 10px white;
   position: relative;
 }
@@ -106,6 +103,7 @@ span {
   z-index: 2;
 }
 
+#markdown-canvas h1,
 #markdown-canvas h4,
 #markdown-canvas p {
   text-shadow: 2px 2px 3px #000;

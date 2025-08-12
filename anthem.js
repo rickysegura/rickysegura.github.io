@@ -137,7 +137,6 @@ class PlaylistAudioPlayer {
       color: white;
       border: 2px solid white;
       border-radius: 5px;
-      cursor: crosshair;
       font-family: inherit;
       font-size: 11px;
       max-width: 200px;
@@ -165,7 +164,6 @@ class PlaylistAudioPlayer {
       color: white;
       border: 2px outset white;
       border-radius: 5px;
-      cursor: pointer;
       font-size: 12px;
     `;
     prevButton.addEventListener('click', () => this.playPrevious());
