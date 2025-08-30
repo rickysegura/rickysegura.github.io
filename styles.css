@@ -2,11 +2,11 @@
 
 * {
   box-sizing: border-box;
-  cursor: crosshair;
+  cursor: url('./images/cursor.png'), auto;
 }
 
 body {
-  background-color: slategrey;
+  background-color: red;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
@@ -69,7 +69,7 @@ span {
 }
 
 #markdown-canvas {
-  background-image: url('./images/heartless.gif');
+  background-image: url('./images/heart.webp');
   background-position: center;
   background-size: cover;
   width: min(90vw, 1600px);
@@ -78,8 +78,7 @@ span {
   margin-top: 5%;
   padding: clamp(15px, 3vw, 20px);
   border-radius: 5px;
-  border: 1px solid white;
-  box-shadow: 0 0 25px 10px white;
+  box-shadow: 0 0 25px 10px black;
   position: relative;
 }
 
@@ -103,19 +102,11 @@ span {
   z-index: 2;
 }
 
-#markdown-canvas h1,
-#markdown-canvas h4,
-#markdown-canvas p {
-  text-shadow: 2px 2px 3px #000;
-}
-
 #pfp {
   background-image: url('./images/pfp.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border: 1px solid white;
-  border-radius: 100%;
   height: 100px;
   width: 100px;
   margin-bottom: 10px;

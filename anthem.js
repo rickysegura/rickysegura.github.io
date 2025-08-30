@@ -155,6 +155,34 @@ class PlaylistAudioPlayer {
       display: flex;
       gap: 5px;
     `;
+
+    function addHoverEffect(button) {
+      // Hover
+      button.addEventListener("mouseenter", () => {
+        button.style.background = "rgba(255, 255, 255, 0.2)";
+      });
+
+      button.addEventListener("mouseleave", () => {
+        button.style.background = "rgba(0, 0, 0, 0.8)";
+        button.style.transform = "scale(1)";
+      });
+
+      // Click (press down)
+      // Click (press down)
+      button.addEventListener("mousedown", () => {
+        button.style.background = "rgba(255, 255, 255, 0.4)";
+        button.style.transform = "scale(0.9)";
+      });
+
+      // Release click
+      button.addEventListener("mouseup", () => {
+        button.style.background = "rgba(255, 255, 255, 0.2)";
+        button.style.transform = "scale(1)";
+      });
+
+      // Smooth transition
+      button.style.transition = "background 0.2s ease, transform 0.1s ease";
+    }
     
     const prevButton = document.createElement('button');
     prevButton.innerHTML = '⏮️';
@@ -178,6 +206,10 @@ class PlaylistAudioPlayer {
     nextButton.innerHTML = '⏭️';
     nextButton.style.cssText = prevButton.style.cssText;
     nextButton.addEventListener('click', () => this.playNext());
+    
+    addHoverEffect(prevButton);
+    addHoverEffect(pausePlayButton);
+    addHoverEffect(nextButton);
     
     controlsContainer.appendChild(prevButton);
     controlsContainer.appendChild(pausePlayButton);
@@ -249,11 +281,15 @@ const backgroundMusic = new PlaylistAudioPlayer();
 
 // Define your playlist here
 const musicPlaylistWithTitles = [
-  { url: "./anthems/takashimurakami.mp3", title: "Takashi Murakami - 6 Dogs" },
-  { url: "./anthems/nuketown.mp3", title: "Nuketown - Ski Mask the Slump God" },
-  { url: "./anthems/wasted.mp3", title: "Wasted (remix) - Juice WRLD" },
-  { url: "./anthems/unreleased.mp3", title: "[unreleased] - Juice WRLD" },
-  { url: "./anthems/90210.mp3", title: "90210 - Blackbear" }
+  { url: './anthems/takashimurakami.mp3', title: 'Takashi Murakami - 6 Dogs' },
+  { url: './anthems/nuketown.mp3', title: 'Nuketown - Ski Mask the Slump God' },
+  { url: './anthems/wasted.mp3', title: 'Wasted (remix) - Juice WRLD' },
+  { url: './anthems/unreleased.mp3', title: '[unreleased] - Juice WRLD' },
+  { url: './anthems/90210.mp3', title: '90210 - Blackbear' },
+  { url: './anthems/crybaby.mp3', title: 'crybaby - Lil Peep' },
+  { url: './anthems/ctrlaltdelete.mp3', title: 'CtrlAltDelete - Bones' },
+  { url: './anthems/dior.mp3', title: 'Dior - Pop Smoke' },
+  { url: './anthems/ptsd.mp3', title: 'PTSD - Pop Smoke' }
 ];
 
 // Set up the playlist
