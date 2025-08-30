@@ -288,7 +288,7 @@ const musicPlaylistWithTitles = [
   { url: './anthems/90210.mp3', title: '90210 - Blackbear' },
   { url: './anthems/crybaby.mp3', title: 'crybaby - Lil Peep' },
   { url: './anthems/ctrlaltdelete.mp3', title: 'CtrlAltDelete - Bones' },
-  { url: './anthems/dior.mp3', title: 'Dior - Pop Smoke' },
+  { url: './anthems/darklight.mp3', title: 'Dark Light - Night Lovell' },
   { url: './anthems/ptsd.mp3', title: 'PTSD - Pop Smoke' }
 ];
 
