@@ -1,6 +1,6 @@
 # About
 
-![Desktop Screenshot](./images/screenshot.jpeg)
+![Desktop Screenshot](./images/screenshot.png)
 My GitHub page is a never-ending art project. [Click here to visit](https://rickysegura.github.io/).
 
 ## Tech Stack
