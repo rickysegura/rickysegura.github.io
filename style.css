@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  cursor: url('./images/cursor.png'), auto;
+  cursor: url('images/cursor.png'), auto;
 }
 
 body {
@@ -16,25 +16,6 @@ body {
   letter-spacing: 2px;
   word-spacing: 4px;
   font-variant: small-caps;
-}
-
-h1 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  margin: 0 0 10px 0;
-}
-
-h1, h4, p {
-  color: white;
-}
-
-h4 {
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  margin: 0 0 10px 0;
-}
-
-p {
-  font-size: clamp(12px, 2vw, 14px);
-  line-height: 1.6;
 }
 
 span {
@@ -69,12 +50,12 @@ span {
 }
 
 #markdown-canvas {
-  background-image: url('./images/heart.webp');
+  background-image: url('images/heart.webp');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  width: min(90vw, 1600px);
-  height: 750px;
+  width: 100vw;
+  height: 100vh;
   padding: clamp(15px, 3vw, 20px);
   border-radius: 5px;
   box-shadow: 0 0 25px 10px black;
@@ -94,33 +75,6 @@ span {
   background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   border-radius: inherit;
-}
-
-#markdown-canvas h1,
-#markdown-canvas h4,
-#markdown-canvas p,
-#markdown-canvas * {
-  position: relative;
-  z-index: 2;
-}
-
-#pfp {
-  background-image: url('./images/pfp.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100px;
-  width: 100px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-.text-em {
-  font-style: italic;
-}
-
-.text-bold {
-  font-weight: bold;
 }
 
 .spider {
@@ -348,31 +302,9 @@ span {
     cursor: default;
     background-attachment: scroll;
   }
-
-  #markdown-canvas {
-    width: 95vw;
-    margin-top: 3vh;
-    border-width: 3px;
-    height: 500px;
-  }
-
-  h1, h4, p {
-    text-align: center;
-  }
-
-  #pfp {
-    margin: auto;
-  }
 }
 
 @media screen and (max-width: 600px) {
-  #markdown-canvas {
-    width: 92vw;
-    padding: 15px;
-    border-width: 2px;
-    height: 350px;
-  }
-
   .spider {
     width: 25px;
     height: 19px;
@@ -380,12 +312,6 @@ span {
 }
 
 @media screen and (max-width: 480px) {
-  #markdown-canvas {
-    margin-top: 2vh;
-    height: auto;
-    width: 90vw;
-  }
-
   span {
     display: block;
     text-align: center;
