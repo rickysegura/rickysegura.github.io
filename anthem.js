@@ -73,7 +73,7 @@ class PlaylistAudioPlayer {
     try {
       await this.audio.play();
       console.log('Audio playing successfully');
-      this.updatePlayButton(`🎵 ${currentTrack.title}`);
+      this.updatePlayButton(`${currentTrack.title}`);
     } catch (error) {
       console.error('Autoplay blocked. Need user interaction first.');
       console.error('Error:', error.message);
@@ -126,14 +126,14 @@ class PlaylistAudioPlayer {
     const currentTrack = this.playlist[this.currentTrackIndex];
     const playButton = document.createElement('div');
     playButton.id = 'audio-play-btn';
-    playButton.innerHTML = `🎵 ${currentTrack ? currentTrack.title : 'Playlist'}`;
+    playButton.innerHTML = `${currentTrack ? currentTrack.title : 'Playlist'}`;
     playButton.style.cssText = `
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 5;
       padding: 10px 15px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       border: 2px solid white;
       border-radius: 5px;
@@ -188,7 +188,7 @@ class PlaylistAudioPlayer {
     prevButton.innerHTML = '⏮️';
     prevButton.style.cssText = `
       padding: 5px 8px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       border: 2px outset white;
       border-radius: 5px;
